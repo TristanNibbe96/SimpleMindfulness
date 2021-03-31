@@ -2,7 +2,7 @@
 //  SimpleMindfulnessApp.swift
 //  Shared
 //
-//  Created by user192295 on 3/31/21.
+//  Created by Tristan Nibbe on 3/31/21.
 //
 
 import SwiftUI
@@ -13,6 +13,10 @@ struct SimpleMindfulnessApp: App {
         WindowGroup {
             ContentView()
         }
+        
+    }
+    
+    func openMoodSelector(){
         
     }
     

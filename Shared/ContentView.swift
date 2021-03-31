@@ -8,19 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
+    func function(){
+        print("asdfasdf")
+    }
+    
     var body: some View {
         ZStack {
             Image("Rainbow")
+                .ignoresSafeArea()
             VStack{
-                Text("Hello, 4646464646world!")
+                Spacer()
+                Text("Hello, _name_ how are you today?")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .frame(maxWidth: 300)
+                    .multilineTextAlignment(.center)
                     .padding()
-                Button(action: {
-                    print("buyttopn pressed")
-                }, label: {
-                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                })
-            }
-        }
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(25)
+                
+                Spacer()
+                
+                Button(action: {self.function()}
+                    ,label: {
+                    ZStack{
+                        Text("I am feeling...")
+                    }
+                    .padding() 
+                    .foregroundColor(.white)
+                    .background(Color.red)
+                    .cornerRadius(20)
+                })//Button End
+                
+                Spacer()
+            }//VStack end
+        }//ZStack end
     }
 }
 

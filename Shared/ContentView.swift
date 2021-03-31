@@ -2,15 +2,25 @@
 //  ContentView.swift
 //  Shared
 //
-//  Created by user192295 on 3/31/21.
+//  Created by Tristan Nibbe on 3/31/21.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            Image("Rainbow")
+            VStack{
+                Text("Hello, 4646464646world!")
+                    .padding()
+                Button(action: {
+                    print("buyttopn pressed")
+                }, label: {
+                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                })
+            }
+        }
     }
 }
 

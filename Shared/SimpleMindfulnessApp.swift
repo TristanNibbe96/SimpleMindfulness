@@ -13,5 +13,7 @@ struct SimpleMindfulnessApp: App {
         WindowGroup {
             ContentView()
         }
+        
     }
+    
 }

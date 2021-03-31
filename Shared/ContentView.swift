@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingPopover = false
     func function(){
         print("asdfasdf")
+        showingPopover = true
     }
     
     var body: some View {
@@ -34,12 +36,17 @@ struct ContentView: View {
                     ZStack{
                         Text("I am feeling...")
                     }
-                    .padding() 
+                    .padding()
                     .foregroundColor(.white)
                     .background(Color.red)
                     .cornerRadius(20)
                 })//Button End
-                
+                .contextMenu(ContextMenu(menuItems: {
+                    /*@START_MENU_TOKEN@*/Text("Menu Item 1")/*@END_MENU_TOKEN@*/
+                    /*@START_MENU_TOKEN@*/Text("Menu Item 2")/*@END_MENU_TOKEN@*/
+                    /*@START_MENU_TOKEN@*/Text("Menu Item 3")/*@END_MENU_TOKEN@*/
+                }))
+
                 Spacer()
             }//VStack end
         }//ZStack end

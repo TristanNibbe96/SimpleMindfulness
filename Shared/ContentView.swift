@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showingPopover = false
     func function(){
         print("asdfasdf")
-        showingPopover = true
     }
+    
+    func logEmotion(){
+        
+    }
+    
     
     var body: some View {
         ZStack {
@@ -42,10 +45,38 @@ struct ContentView: View {
                     .cornerRadius(20)
                 })//Button End
                 .contextMenu(ContextMenu(menuItems: {
-                    /*@START_MENU_TOKEN@*/Text("Menu Item 1")/*@END_MENU_TOKEN@*/
-                    /*@START_MENU_TOKEN@*/Text("Menu Item 2")/*@END_MENU_TOKEN@*/
-                    /*@START_MENU_TOKEN@*/Text("Menu Item 3")/*@END_MENU_TOKEN@*/
-                }))
+                    HStack{
+                    Button(action: {self.logEmotion()}
+                            ,label: {
+                            ZStack{
+                                Text("Happy")
+                                Image("Face_Happy")
+                            }
+                    })//end button
+                    Button(action: {self.logEmotion()}
+                           ,label: {
+                            ZStack{
+                                Text("Happy")
+                                Image("Face_Happy")
+                            }
+                    })//end button
+                    Button(action: {self.logEmotion()}
+                           ,label: {
+                            ZStack{
+                                Text("Happy")
+                                Image("Face_Happy")
+                            }
+                    })//end button
+                    Button(action: {self.logEmotion()}
+                           ,label: {
+                            ZStack{
+                                Text("Happy")
+                                Image("Face_Happy")
+                            }
+                    })//end button
+                    }
+
+                }))//End Context Menu
 
                 Spacer()
             }//VStack end

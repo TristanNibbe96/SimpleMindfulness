@@ -2,7 +2,7 @@
 //  EmotionButtonView.swift
 //  SimpleMindfulness
 //
-//  Created by user192295 on 4/1/21.
+//  Created by Tristan Nibbe on 4/1/21.
 //
 
 import SwiftUI
@@ -13,14 +13,22 @@ struct EmotionButtonView: View {
     }
     
     var body: some View {
-        Button(action: {self.logEmotion()}
-               ,label: {
-                    ZStack{
-                        Text("Happy")
-                        Image("Face_Happy")
+        GeometryReader { geo in
+            Button(action: {self.logEmotion()}
+                   ,label: {
+                        VStack{
+                            Text("Happy")
+                                .font(.title)
+                            GeometryReader { geo2 in
+                                Image("Face_Happy")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }
+                        }
                     }
-               }
-        )//EndButton
+            )//EndButton
+            .background(Color.red)
+        }
     }
 }
 

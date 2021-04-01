@@ -14,14 +14,17 @@ struct RadialMenuView: View {
     
     var body: some View {
         VStack{
-            Spacer()
             EmotionButtonView()
+                .frame(width: 100.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
+
             HStack{
                 EmotionButtonView()
+                    .frame(width: 100.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
                 EmotionButtonView()
+                    .frame(width: 100.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
             }//end HStack
             EmotionButtonView()
-            Spacer()
+                .frame(width: 100.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
         }//EndVStack
     }
 }

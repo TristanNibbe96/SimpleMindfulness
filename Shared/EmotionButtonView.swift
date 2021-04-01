@@ -23,7 +23,7 @@ struct EmotionButtonView: View {
                                     .aspectRatio(contentMode: .fit)
                         }
                     }
-            )//EndButton
+            )
     }
 }
 

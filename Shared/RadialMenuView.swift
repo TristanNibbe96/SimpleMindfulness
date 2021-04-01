@@ -15,11 +15,7 @@ struct RadialMenuView: View {
     var body: some View {
         VStack{
             Spacer()
-            HStack{
-                Spacer()
             EmotionButtonView()
-                Spacer()
-            }
             HStack{
                 EmotionButtonView()
                 EmotionButtonView()

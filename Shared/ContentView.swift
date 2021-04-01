@@ -12,10 +12,6 @@ struct ContentView: View {
         print("asdfasdf")
     }
     
-    func logEmotion(){
-        
-    }
-    
     
     var body: some View {
         ZStack {
@@ -44,40 +40,7 @@ struct ContentView: View {
                     .background(Color.red)
                     .cornerRadius(20)
                 })//Button End
-                .contextMenu(ContextMenu(menuItems: {
-                    HStack{
-                    Button(action: {self.logEmotion()}
-                            ,label: {
-                            ZStack{
-                                Text("Happy")
-                                Image("Face_Happy")
-                            }
-                    })//end button
-                    Button(action: {self.logEmotion()}
-                           ,label: {
-                            ZStack{
-                                Text("Happy")
-                                Image("Face_Happy")
-                            }
-                    })//end button
-                    Button(action: {self.logEmotion()}
-                           ,label: {
-                            ZStack{
-                                Text("Happy")
-                                Image("Face_Happy")
-                            }
-                    })//end button
-                    Button(action: {self.logEmotion()}
-                           ,label: {
-                            ZStack{
-                                Text("Happy")
-                                Image("Face_Happy")
-                            }
-                    })//end button
-                    }
-
-                }))//End Context Menu
-
+                
                 Spacer()
             }//VStack end
         }//ZStack end

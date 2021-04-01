@@ -15,6 +15,10 @@
 		F91A9CD2261456D200893BEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CA7261456D000893BEE /* ContentView.swift */; };
 		F91A9CD3261456D200893BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91A9CA8261456D200893BEE /* Assets.xcassets */; };
 		F91A9CD4261456D200893BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91A9CA8261456D200893BEE /* Assets.xcassets */; };
+		F9C37B9E261633B0008D7A3E /* RadialMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */; };
+		F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */; };
+		F9C37BA526163508008D7A3E /* EmotionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37BA426163508008D7A3E /* EmotionButtonView.swift */; };
+		F9C37BA626163508008D7A3E /* EmotionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37BA426163508008D7A3E /* EmotionButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		F91A9CC8261456D200893BEE /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91A9CCC261456D200893BEE /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		F91A9CCE261456D200893BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialMenuView.swift; sourceTree = "<group>"; };
+		F9C37BA426163508008D7A3E /* EmotionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,8 @@
 				F91A9CA6261456D000893BEE /* SimpleMindfulnessApp.swift */,
 				F91A9CA7261456D000893BEE /* ContentView.swift */,
 				F91A9CA8261456D200893BEE /* Assets.xcassets */,
+				F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */,
+				F9C37BA426163508008D7A3E /* EmotionButtonView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -308,6 +316,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C37BA526163508008D7A3E /* EmotionButtonView.swift in Sources */,
+				F9C37B9E261633B0008D7A3E /* RadialMenuView.swift in Sources */,
 				F91A9CD1261456D200893BEE /* ContentView.swift in Sources */,
 				F91A9CCF261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
 			);
@@ -317,6 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C37BA626163508008D7A3E /* EmotionButtonView.swift in Sources */,
+				F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */,
 				F91A9CD2261456D200893BEE /* ContentView.swift in Sources */,
 				F91A9CD0261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
 			);

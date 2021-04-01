@@ -8,24 +8,26 @@
 import SwiftUI
 
 struct RadialMenuView: View {
-    func logEmotion(){
-        
+    var scaledWidth: CGFloat{
+        return UIScreen.main.bounds.width * 0.25;
     }
-    
+        
     var body: some View {
         VStack{
             EmotionButtonView()
-                .frame(width: 100.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
-
+                .frame(width: scaledWidth, height: scaledWidth)
             HStack{
                 EmotionButtonView()
-                    .frame(width: 100.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
+                    .frame(width: scaledWidth, height: scaledWidth)
+                Spacer()
                 EmotionButtonView()
-                    .frame(width: 100.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
+                    .frame(width: scaledWidth, height: scaledWidth)
+                    
             }//end HStack
             EmotionButtonView()
-                .frame(width: 100.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
+                .frame(width: scaledWidth, height: scaledWidth)
         }//EndVStack
+        .frame(width:scaledWidth * 3)
     }
 }
 

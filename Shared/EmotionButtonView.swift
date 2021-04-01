@@ -13,17 +13,17 @@ struct EmotionButtonView: View {
     }
     
     var body: some View {
-            Button(action: {self.logEmotion()}
-                   ,label: {
-                        VStack{
-                            Text("Happy")
-                                .font(.title)
-                                Image("Face_Happy")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                        }
-                    }
-            )
+        Button(action: {self.logEmotion()}
+            ,label: {
+                VStack{
+                    Text("Happy")
+                        .font(.title)
+                    Image("Face_Happy")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+            }
+        )
     }
 }
 

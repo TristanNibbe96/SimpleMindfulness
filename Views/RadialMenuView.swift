@@ -28,6 +28,8 @@ struct RadialMenuView: View {
                 .frame(width: scaledWidth, height: scaledWidth)
         }//EndVStack
         .frame(width:scaledWidth * 3)
+        .background(Color.gray)
+        .cornerRadius(scaledWidth)
     }
 }
 

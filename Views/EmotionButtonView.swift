@@ -15,15 +15,18 @@ struct EmotionButtonView: View {
     var body: some View {
         Button(action: {self.logEmotion()}
             ,label: {
-                VStack{
+                VStack(alignment: .center, spacing: 0, content: {
                     Text("Happy")
                         .font(.title)
+                        .foregroundColor(Color.red)
                     Image("Face_Happy")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                }//End Vstack
+                })//End Vstack
             }
         )//End Button
+        .background(Color.white)
+        .cornerRadius(20)
     }
 }
 

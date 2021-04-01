@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct RadialMenuButtonView: View {
+    @State var radialMenuOpen = false
     func openRadialMenu(){
-        print("asdfasdf")
+        radialMenuOpen = true
     }
     
     var body: some View {
-        Button(action: {self.openRadialMenu()}
-            ,label: {
-            ZStack{
-                Text("I am feeling...")
+        ZStack{
+            Button(action: {self.openRadialMenu()}
+                ,label: {
+                ZStack{
+                    Text("I am feeling...")
+                }
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.red)
+                .cornerRadius(20)
+                }
+            )//EndButton
+            if self.radialMenuOpen{
+                RadialMenuView()
             }
-            .padding()
-            .foregroundColor(.white)
-            .background(Color.red)
-            .cornerRadius(20)
-            }
-        )
+        }//End ZStack
     }
 }
 

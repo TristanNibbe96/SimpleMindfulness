@@ -21,9 +21,9 @@ struct EmotionButtonView: View {
                     Image("Face_Happy")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                }
+                }//End Vstack
             }
-        )
+        )//End Button
     }
 }
 

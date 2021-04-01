@@ -14,10 +14,5 @@ struct SimpleMindfulnessApp: App {
             ContentView()
         }
         
-    }
-    
-    func openMoodSelector(){
-        
-    }
-    
+    }    
 }

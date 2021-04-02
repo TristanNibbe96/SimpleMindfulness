@@ -2,14 +2,27 @@
 //  SettingsView.swift
 //  SimpleMindfulness
 //
-//  Created by user192295 on 4/1/21.
+//  Created by Tristan Nibbe on 4/1/21.
 //
 
 import SwiftUI
 
 struct SettingsView: View {
+    @State var enteredName: String = ""
+    
+    @State var savedName = UserDefaults.standard.string(forKey: "name") ?? ""
+    
+    func saveName(){
+        UserDefaults.standard.set(enteredName, forKey: "name")
+        savedName = enteredName
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            TextField("\(savedName)", text: $enteredName){_ in
+            }onCommit:{saveName()}
+        }
+        .frame(width: 100)
     }
 }
 

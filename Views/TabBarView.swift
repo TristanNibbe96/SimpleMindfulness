@@ -2,7 +2,7 @@
 //  TabBarView.swift
 //  SimpleMindfulness
 //
-//  Created by user192295 on 4/1/21.
+//  Created by Tristan Nibbe on 4/1/21.
 //
 
 import SwiftUI

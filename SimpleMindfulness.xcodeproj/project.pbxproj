@@ -19,14 +19,16 @@
 		F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */; };
 		F9C37BA526163508008D7A3E /* EmotionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37BA426163508008D7A3E /* EmotionButtonView.swift */; };
 		F9C37BA626163508008D7A3E /* EmotionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37BA426163508008D7A3E /* EmotionButtonView.swift */; };
+		F9C6A7922616E65A001418A3 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A7912616E65A001418A3 /* ContentViewModel.swift */; };
+		F9C6A7982616EA2F001418A3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6A7972616EA2F001418A3 /* SettingsViewModel.swift */; };
 		F9FF80B3261681F600190D34 /* RadialMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80B2261681F600190D34 /* RadialMenuButtonView.swift */; };
 		F9FF80B4261681F600190D34 /* RadialMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80B2261681F600190D34 /* RadialMenuButtonView.swift */; };
 		F9FF80C32616838100190D34 /* GreetingMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80C22616838100190D34 /* GreetingMessageView.swift */; };
 		F9FF80C42616838100190D34 /* GreetingMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80C22616838100190D34 /* GreetingMessageView.swift */; };
 		F9FF80CA2616924B00190D34 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80C92616924B00190D34 /* SettingsView.swift */; };
 		F9FF80CB2616924B00190D34 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80C92616924B00190D34 /* SettingsView.swift */; };
-		F9FF80D12616928E00190D34 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D02616928E00190D34 /* TabBarView.swift */; };
-		F9FF80D22616928E00190D34 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D02616928E00190D34 /* TabBarView.swift */; };
+		F9FF80D12616928E00190D34 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D02616928E00190D34 /* NavBarView.swift */; };
+		F9FF80D22616928E00190D34 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D02616928E00190D34 /* NavBarView.swift */; };
 		F9FF80D8261696C400190D34 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D7261696C400190D34 /* LogView.swift */; };
 		F9FF80D9261696C400190D34 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D7261696C400190D34 /* LogView.swift */; };
 /* End PBXBuildFile section */
@@ -65,10 +67,12 @@
 		F91A9CCE261456D200893BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialMenuView.swift; sourceTree = "<group>"; };
 		F9C37BA426163508008D7A3E /* EmotionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButtonView.swift; sourceTree = "<group>"; };
+		F9C6A7912616E65A001418A3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		F9C6A7972616EA2F001418A3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		F9FF80B2261681F600190D34 /* RadialMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialMenuButtonView.swift; sourceTree = "<group>"; };
 		F9FF80C22616838100190D34 /* GreetingMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingMessageView.swift; sourceTree = "<group>"; };
 		F9FF80C92616924B00190D34 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		F9FF80D02616928E00190D34 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		F9FF80D02616928E00190D34 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		F9FF80D7261696C400190D34 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +111,7 @@
 		F91A9CA0261456D000893BEE = {
 			isa = PBXGroup;
 			children = (
+				F9C6A7902616E631001418A3 /* ViewModels */,
 				F9FF80B92616820600190D34 /* Views */,
 				F91A9CA5261456D000893BEE /* Shared */,
 				F91A9CAF261456D200893BEE /* iOS */,
@@ -172,6 +177,15 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		F9C6A7902616E631001418A3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F9C6A7912616E65A001418A3 /* ContentViewModel.swift */,
+				F9C6A7972616EA2F001418A3 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		F9FF80B92616820600190D34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +195,7 @@
 				F9C37BA426163508008D7A3E /* EmotionButtonView.swift */,
 				F9FF80B2261681F600190D34 /* RadialMenuButtonView.swift */,
 				F9FF80C92616924B00190D34 /* SettingsView.swift */,
-				F9FF80D02616928E00190D34 /* TabBarView.swift */,
+				F9FF80D02616928E00190D34 /* NavBarView.swift */,
 				F9FF80D7261696C400190D34 /* LogView.swift */,
 			);
 			path = Views;
@@ -346,11 +360,13 @@
 			files = (
 				F9FF80CA2616924B00190D34 /* SettingsView.swift in Sources */,
 				F9C37BA526163508008D7A3E /* EmotionButtonView.swift in Sources */,
-				F9FF80D12616928E00190D34 /* TabBarView.swift in Sources */,
+				F9FF80D12616928E00190D34 /* NavBarView.swift in Sources */,
 				F9FF80B3261681F600190D34 /* RadialMenuButtonView.swift in Sources */,
+				F9C6A7922616E65A001418A3 /* ContentViewModel.swift in Sources */,
 				F9C37B9E261633B0008D7A3E /* RadialMenuView.swift in Sources */,
 				F91A9CD1261456D200893BEE /* ContentView.swift in Sources */,
 				F91A9CCF261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
+				F9C6A7982616EA2F001418A3 /* SettingsViewModel.swift in Sources */,
 				F9FF80D8261696C400190D34 /* LogView.swift in Sources */,
 				F9FF80C32616838100190D34 /* GreetingMessageView.swift in Sources */,
 			);
@@ -362,7 +378,7 @@
 			files = (
 				F9FF80CB2616924B00190D34 /* SettingsView.swift in Sources */,
 				F9C37BA626163508008D7A3E /* EmotionButtonView.swift in Sources */,
-				F9FF80D22616928E00190D34 /* TabBarView.swift in Sources */,
+				F9FF80D22616928E00190D34 /* NavBarView.swift in Sources */,
 				F9FF80B4261681F600190D34 /* RadialMenuButtonView.swift in Sources */,
 				F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */,
 				F91A9CD2261456D200893BEE /* ContentView.swift in Sources */,

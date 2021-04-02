@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    func refreshScreen(){
-        GreetingMessageView().updateSavedName()
-    }
-    
+
     var body: some View {
         ZStack {
             Image("Rainbow")

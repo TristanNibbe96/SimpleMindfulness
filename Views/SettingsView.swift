@@ -8,19 +8,14 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @ObservedObject var viewModel : SettingsViewModel = SettingsViewModel()
     @State var enteredName: String = ""
     
-    @State var savedName = UserDefaults.standard.string(forKey: "name") ?? ""
-    
-    func saveName(){
-        UserDefaults.standard.set(enteredName, forKey: "name")
-        savedName = enteredName
-    }
     
     var body: some View {
         VStack{
-            TextField("\(savedName)", text: $enteredName){_ in
-            }onCommit:{saveName()}
+            TextField("\(viewModel.getSavedName())", text: $enteredName){_ in
+            }onCommit:{viewModel.saveUserName(enteredName: enteredName)}
         }
         .frame(width: 100)
     }

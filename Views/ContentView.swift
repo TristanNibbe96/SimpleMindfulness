@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    
     var body: some View {
         ZStack {
             Image("Rainbow")
                 .ignoresSafeArea()
             VStack{
-                Spacer()
+                HStack(alignment: .center){
+                    Text("Simple Mindfulness")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                }
+                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 GreetingMessageView()
-                Spacer()
                 RadialMenuButtonView()
-                Spacer()
             }//VStack end
         }//ZStack end
     }

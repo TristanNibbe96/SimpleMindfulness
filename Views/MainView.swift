@@ -11,28 +11,34 @@ struct MainView: View {
     
     @State var navBarVisible = false
     
-    func showNavBar(){
-        navBarVisible = true
+    func toggleNavBar(){
+        navBarVisible.toggle()
+    }
+    
+    var scaledWidth: CGFloat{
+        return UIScreen.main.bounds.width;
+    }
+    
+    var scaledHeight: CGFloat{
+        return UIScreen.main.bounds.height;
     }
     
     var body: some View {
-       GeometryReader{geometry in
-            ZStack{
-                ContentView()
+        ZStack(alignment: .leading){
+                ContentView(mainView: self)
                 if self.navBarVisible{
-                    NavBarView()
-                        .frame(width: geometry.size.width/2,height: geometry.size.height)
+                    NavBarView(mainView: self)
+                        .frame(width: scaledWidth,height: scaledHeight)
+                        .offset(x: scaledWidth * 0.65)
                 }
+                
             }// zStack
-            .frame(width: geometry.size.width, height: geometry.size.height)
-       }//End geometry
+            .frame(width: scaledWidth, height: scaledHeight)
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-
-
     }
 }

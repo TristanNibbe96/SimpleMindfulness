@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct TitleView: View {
-    func showNavBar(){
-        
+    var contentView: ContentView
+    
+    func toggleNavBar(){
+        contentView.toggleNavBar()
     }
     
     var body: some View {
@@ -17,7 +19,7 @@ struct TitleView: View {
             Text("Simple Mindfulness")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             Button(action:
-                    showNavBar,
+                    toggleNavBar,
                 label: {
                     Image(systemName: "book")
             })//button end
@@ -28,6 +30,6 @@ struct TitleView: View {
 
 struct TitleView_Previews: PreviewProvider {
     static var previews: some View {
-        TitleView()
+        TitleView(contentView: ContentView(mainView: MainView()))
     }
 }

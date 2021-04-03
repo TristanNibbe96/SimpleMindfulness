@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct NavBarView: View {
+    var mainView: MainView
+    
+    func toggleNavBar(){
+        mainView.toggleNavBar()
+    }
     
     var body: some View {
         NavigationView{
@@ -30,13 +35,22 @@ struct NavBarView: View {
                             Image(systemName: "gear")
                         }
                 })//end nav link
+                Button(action: toggleNavBar
+                ,label: {
+                    HStack{
+                        Text("Main")
+                        Spacer()
+                        Image(systemName: "house")
+                    }
+                })
             }//End list
+            .navigationBarTitle("Navigation")
         }//end nav view
     }
 }
 
 struct NavBarView_Previews: PreviewProvider {
     static var previews: some View {
-        NavBarView()
+        NavBarView(mainView: MainView())
     }
 }

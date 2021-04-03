@@ -11,7 +11,7 @@ import SwiftUI
 struct SimpleMindfulnessApp: App {
     var body: some Scene {
         WindowGroup {
-            NavBarView()
+            MainView()
         }
         
     }    

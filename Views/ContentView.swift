@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    func showNavBar(){
-        
+    var mainView: MainView
+    
+    func toggleNavBar(){
+        mainView.toggleNavBar()
     }
     
     var scaledWidth: CGFloat{
@@ -28,7 +30,7 @@ struct ContentView: View {
                     
                     VStack{
                         Divider()
-                        TitleView()
+                        TitleView(contentView: self)
                         Divider()
                     }
                     GreetingMessageView()
@@ -44,6 +46,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(mainView: MainView())
     }
 }

@@ -183,6 +183,21 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		F9589D36261810A2004B800B /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F91A9CA7261456D000893BEE /* ContentView.swift */,
+				F9589D2F2617FCF6004B800B /* TitleView.swift */,
+				F9FF80C22616838100190D34 /* GreetingMessageView.swift */,
+				F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */,
+				F9C37BA426163508008D7A3E /* EmotionButtonView.swift */,
+				F9FF80B2261681F600190D34 /* RadialMenuButtonView.swift */,
+				F9FF80D02616928E00190D34 /* NavBarView.swift */,
+				F9589D282617F7E5004B800B /* MainView.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
 		F9C6A7902616E631001418A3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,16 +210,9 @@
 		F9FF80B92616820600190D34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F91A9CA7261456D000893BEE /* ContentView.swift */,
-				F9589D2F2617FCF6004B800B /* TitleView.swift */,
-				F9FF80C22616838100190D34 /* GreetingMessageView.swift */,
-				F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */,
-				F9C37BA426163508008D7A3E /* EmotionButtonView.swift */,
-				F9FF80B2261681F600190D34 /* RadialMenuButtonView.swift */,
+				F9589D36261810A2004B800B /* MainScreen */,
 				F9FF80C92616924B00190D34 /* SettingsView.swift */,
-				F9FF80D02616928E00190D34 /* NavBarView.swift */,
 				F9FF80D7261696C400190D34 /* LogView.swift */,
-				F9589D282617F7E5004B800B /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

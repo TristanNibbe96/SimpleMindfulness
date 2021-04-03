@@ -15,6 +15,10 @@
 		F91A9CD2261456D200893BEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CA7261456D000893BEE /* ContentView.swift */; };
 		F91A9CD3261456D200893BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91A9CA8261456D200893BEE /* Assets.xcassets */; };
 		F91A9CD4261456D200893BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91A9CA8261456D200893BEE /* Assets.xcassets */; };
+		F9589D292617F7E5004B800B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MainView.swift */; };
+		F9589D2A2617F7E5004B800B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MainView.swift */; };
+		F9589D302617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
+		F9589D312617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
 		F9C37B9E261633B0008D7A3E /* RadialMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */; };
 		F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */; };
 		F9C37BA526163508008D7A3E /* EmotionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37BA426163508008D7A3E /* EmotionButtonView.swift */; };
@@ -27,8 +31,8 @@
 		F9FF80C42616838100190D34 /* GreetingMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80C22616838100190D34 /* GreetingMessageView.swift */; };
 		F9FF80CA2616924B00190D34 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80C92616924B00190D34 /* SettingsView.swift */; };
 		F9FF80CB2616924B00190D34 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80C92616924B00190D34 /* SettingsView.swift */; };
-		F9FF80D12616928E00190D34 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D02616928E00190D34 /* TabBarView.swift */; };
-		F9FF80D22616928E00190D34 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D02616928E00190D34 /* TabBarView.swift */; };
+		F9FF80D12616928E00190D34 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D02616928E00190D34 /* NavBarView.swift */; };
+		F9FF80D22616928E00190D34 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D02616928E00190D34 /* NavBarView.swift */; };
 		F9FF80D8261696C400190D34 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D7261696C400190D34 /* LogView.swift */; };
 		F9FF80D9261696C400190D34 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF80D7261696C400190D34 /* LogView.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +69,8 @@
 		F91A9CC8261456D200893BEE /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91A9CCC261456D200893BEE /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		F91A9CCE261456D200893BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9589D282617F7E5004B800B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F9589D2F2617FCF6004B800B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialMenuView.swift; sourceTree = "<group>"; };
 		F9C37BA426163508008D7A3E /* EmotionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButtonView.swift; sourceTree = "<group>"; };
 		F9C6A7912616E65A001418A3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -72,7 +78,7 @@
 		F9FF80B2261681F600190D34 /* RadialMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialMenuButtonView.swift; sourceTree = "<group>"; };
 		F9FF80C22616838100190D34 /* GreetingMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingMessageView.swift; sourceTree = "<group>"; };
 		F9FF80C92616924B00190D34 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		F9FF80D02616928E00190D34 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		F9FF80D02616928E00190D34 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		F9FF80D7261696C400190D34 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,13 +196,15 @@
 			isa = PBXGroup;
 			children = (
 				F91A9CA7261456D000893BEE /* ContentView.swift */,
+				F9589D2F2617FCF6004B800B /* TitleView.swift */,
 				F9FF80C22616838100190D34 /* GreetingMessageView.swift */,
 				F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */,
 				F9C37BA426163508008D7A3E /* EmotionButtonView.swift */,
 				F9FF80B2261681F600190D34 /* RadialMenuButtonView.swift */,
 				F9FF80C92616924B00190D34 /* SettingsView.swift */,
-				F9FF80D02616928E00190D34 /* TabBarView.swift */,
+				F9FF80D02616928E00190D34 /* NavBarView.swift */,
 				F9FF80D7261696C400190D34 /* LogView.swift */,
+				F9589D282617F7E5004B800B /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -359,8 +367,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9FF80CA2616924B00190D34 /* SettingsView.swift in Sources */,
+				F9589D292617F7E5004B800B /* MainView.swift in Sources */,
 				F9C37BA526163508008D7A3E /* EmotionButtonView.swift in Sources */,
-				F9FF80D12616928E00190D34 /* TabBarView.swift in Sources */,
+				F9FF80D12616928E00190D34 /* NavBarView.swift in Sources */,
 				F9FF80B3261681F600190D34 /* RadialMenuButtonView.swift in Sources */,
 				F9C6A7922616E65A001418A3 /* ContentViewModel.swift in Sources */,
 				F9C37B9E261633B0008D7A3E /* RadialMenuView.swift in Sources */,
@@ -368,6 +377,7 @@
 				F91A9CCF261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
 				F9C6A7982616EA2F001418A3 /* SettingsViewModel.swift in Sources */,
 				F9FF80D8261696C400190D34 /* LogView.swift in Sources */,
+				F9589D302617FCF6004B800B /* TitleView.swift in Sources */,
 				F9FF80C32616838100190D34 /* GreetingMessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,11 +388,13 @@
 			files = (
 				F9FF80CB2616924B00190D34 /* SettingsView.swift in Sources */,
 				F9C37BA626163508008D7A3E /* EmotionButtonView.swift in Sources */,
-				F9FF80D22616928E00190D34 /* TabBarView.swift in Sources */,
+				F9FF80D22616928E00190D34 /* NavBarView.swift in Sources */,
+				F9589D2A2617F7E5004B800B /* MainView.swift in Sources */,
 				F9FF80B4261681F600190D34 /* RadialMenuButtonView.swift in Sources */,
 				F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */,
 				F91A9CD2261456D200893BEE /* ContentView.swift in Sources */,
 				F91A9CD0261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
+				F9589D312617FCF6004B800B /* TitleView.swift in Sources */,
 				F9FF80D9261696C400190D34 /* LogView.swift in Sources */,
 				F9FF80C42616838100190D34 /* GreetingMessageView.swift in Sources */,
 			);

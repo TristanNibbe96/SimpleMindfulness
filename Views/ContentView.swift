@@ -8,20 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    func showNavBar(){
+        
+    }
+    
+    var scaledWidth: CGFloat{
+        return UIScreen.main.bounds.width;
+    }
+    
+    var scaledHeight: CGFloat{
+        return UIScreen.main.bounds.height;
+    }
     
     var body: some View {
         ZStack {
             Image("Rainbow")
                 .ignoresSafeArea()
-            VStack{
-                HStack(alignment: .center){
-                    Text("Simple Mindfulness")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                }
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                GreetingMessageView()
-                RadialMenuButtonView()
-            }//VStack end
+                VStack(){
+                    
+                    VStack{
+                        Divider()
+                        TitleView()
+                        Divider()
+                    }
+                    GreetingMessageView()
+                    Spacer()
+                    Spacer()
+                    RadialMenuButtonView()
+                    Spacer()
+                }//VStack end
+                .frame(width: scaledWidth, height: scaledHeight)
         }//ZStack end
     }
 }

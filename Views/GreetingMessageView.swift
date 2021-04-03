@@ -10,6 +10,10 @@ import SwiftUI
 struct GreetingMessageView: View {
     @ObservedObject var viewModel : ContentViewModel = ContentViewModel()
     
+    var scaledWidth: String{
+        return viewModel.getSavedName()
+    }
+    
     var body: some View {
         Text("Hello, \(viewModel.getSavedName()) how are you today?")
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -17,7 +21,7 @@ struct GreetingMessageView: View {
             .multilineTextAlignment(.center)
             .padding()
             .foregroundColor(.white)
-            .background(Color.blue)
+            .background(Color.gray)
             .cornerRadius(25)
     }
 }

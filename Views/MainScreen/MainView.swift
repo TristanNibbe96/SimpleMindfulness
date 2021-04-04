@@ -24,17 +24,12 @@ struct MainView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .leading){
-                ContentView(mainView: self)
-                if self.navBarVisible{
-                    NavBarView(mainView: self)
-                        //.aspectRatio(contentMode: .fit)
-                        .frame(width: scaledWidth,height: scaledHeight)
-                        .offset(x: scaledWidth * 0.64)
-                }
-                
-            }// zStack
-            .frame(width: scaledWidth, height: scaledHeight)
+        
+        if self.navBarVisible{
+            NavBarView(mainView: self)
+        }else{
+            ContentView(mainView: self)
+        }
     }
 }
 

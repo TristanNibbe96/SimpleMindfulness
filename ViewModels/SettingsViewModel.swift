@@ -16,4 +16,19 @@ class SettingsViewModel: ObservableObject{
     func getSavedName() -> String{
         return UserDefaults.standard.string(forKey: "name") ?? "User Name"
     }
+    
+    func getPlist(name: String) -> [String]?
+    {
+        let path = Bundle.main.path(forResource: name, ofType: "plist") ??  ""
+        let xml = FileManager.default.contents(atPath:path)
+        
+        var Plist : [String] = []
+        
+        if xml != nil {
+            return (try? PropertyListSerialization.propertyList(from: xml!, options: .mutableContainersAndLeaves, format: nil)) as? [String]
+        }
+        
+        return nil
+
+    }
 }

@@ -29,7 +29,7 @@ struct MainView: View {
                 if self.navBarVisible{
                     NavBarView(mainView: self)
                         .frame(width: scaledWidth,height: scaledHeight)
-                        .offset(x: scaledWidth * 0.65)
+                        .offset(x: scaledWidth * 0.64)
                 }
                 
             }// zStack

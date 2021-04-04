@@ -14,10 +14,17 @@ struct SettingsView: View {
     
     var body: some View {
         VStack{
-            TextField("\(viewModel.getSavedName())", text: $enteredName){_ in
-            }onCommit:{viewModel.saveUserName(enteredName: enteredName)}
-        }
-        .frame(width: 100)
+            HStack{
+                Text("Name: ")
+                    .padding()
+                TextField("\(viewModel.getSavedName())", text: $enteredName){_ in
+                }onCommit:{viewModel.saveUserName(enteredName: enteredName)}
+                    .padding()
+            }
+            List{
+            
+            }
+        }.padding()
     }
 }
 

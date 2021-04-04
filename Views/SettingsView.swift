@@ -12,7 +12,10 @@ struct SettingsView: View {
     @State var enteredName: String = ""
     
     var body: some View {
+        let suggestions: Suggestions = viewModel.getProcessedSuggestions(name: "Suggestions")
+        
         VStack{
+            Spacer()
             HStack{
                 Text("Name: ")
                     .padding()
@@ -20,12 +23,28 @@ struct SettingsView: View {
                 }onCommit:{viewModel.saveUserName(enteredName: enteredName)}
                     .padding()
             }
-            List{
-                ForEach(viewModel.getProcessedSuggestions(name: "Suggestions").AngrySuggestions, id: \.self ){ action in
-                    Text(action)
-                }
-            }
-        }.padding()
+            TabView{
+                StringListView(stringList: suggestions.AngrySuggestions)
+                    .tabItem {
+                        Image(systemName: "house")
+                    }
+                StringListView(stringList: suggestions.HappySuggestions)
+                    .tabItem {
+                        Image(systemName: "house")
+                    }
+                StringListView(stringList: suggestions.SadSuggestions)
+                    .tabItem {
+                        Image(systemName: "house")
+                    }
+                StringListView(stringList: suggestions.BlehSuggestions)
+                    .tabItem {
+                        Image(systemName: "house")
+                    }
+            }// Tabview
+            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+            Spacer()
+        }//VStack
+        
     }
 }
 

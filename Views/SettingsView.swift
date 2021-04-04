@@ -21,7 +21,7 @@ struct SettingsView: View {
                     .padding()
             }
             List{
-                ForEach(viewModel.getPlist(name: "Suggestions"), id: \.self ){ action in
+                ForEach(viewModel.getProcessedSuggestions(name: "Suggestions").AngrySuggestions, id: \.self ){ action in
                     Text(action)
                 }
             }

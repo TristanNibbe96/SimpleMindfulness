@@ -19,8 +19,8 @@
 		F9589D2A2617F7E5004B800B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MainView.swift */; };
 		F9589D302617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
 		F9589D312617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
-		F9966CCE2619A40200F0642B /* Sugestions.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9966CCD2619A40200F0642B /* Sugestions.plist */; };
-		F9966CCF2619A40200F0642B /* Sugestions.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9966CCD2619A40200F0642B /* Sugestions.plist */; };
+		F9966CCE2619A40200F0642B /* Suggestions.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9966CCD2619A40200F0642B /* Suggestions.plist */; };
+		F9966CCF2619A40200F0642B /* Suggestions.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9966CCD2619A40200F0642B /* Suggestions.plist */; };
 		F9C37B9E261633B0008D7A3E /* RadialMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */; };
 		F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */; };
 		F9C37BA526163508008D7A3E /* EmotionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37BA426163508008D7A3E /* EmotionButtonView.swift */; };
@@ -73,7 +73,7 @@
 		F91A9CCE261456D200893BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9589D282617F7E5004B800B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F9589D2F2617FCF6004B800B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
-		F9966CCD2619A40200F0642B /* Sugestions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Sugestions.plist; sourceTree = "<group>"; };
+		F9966CCD2619A40200F0642B /* Suggestions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Suggestions.plist; sourceTree = "<group>"; };
 		F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialMenuView.swift; sourceTree = "<group>"; };
 		F9C37BA426163508008D7A3E /* EmotionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButtonView.swift; sourceTree = "<group>"; };
 		F9C6A7912616E65A001418A3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 			children = (
 				F91A9CA6261456D000893BEE /* SimpleMindfulnessApp.swift */,
 				F91A9CA8261456D200893BEE /* Assets.xcassets */,
-				F9966CCD2619A40200F0642B /* Sugestions.plist */,
+				F9966CCD2619A40200F0642B /* Suggestions.plist */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9966CCE2619A40200F0642B /* Sugestions.plist in Resources */,
+				F9966CCE2619A40200F0642B /* Suggestions.plist in Resources */,
 				F91A9CD3261456D200893BEE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9966CCF2619A40200F0642B /* Sugestions.plist in Resources */,
+				F9966CCF2619A40200F0642B /* Suggestions.plist in Resources */,
 				F91A9CD4261456D200893BEE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

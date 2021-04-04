@@ -7,13 +7,18 @@
 
 import Foundation
 
-struct Suggestions: Codable {
-    var AngrySuggestions: String
-    var HappySuggestions: String
-    var BlehSuggestions: String
-    var SadSuggestions: String
-    
-    
+struct SuggestionsRaw: Codable {
+    var AngrySuggestions: [String]
+    var HappySuggestions: [String]
+    var BlehSuggestions: [String]
+    var SadSuggestions: [String]
+}
+
+struct Suggestions{
+    var AngrySuggestions: [String]
+    var HappySuggestions: [String]
+    var BlehSuggestions: [String]
+    var SadSuggestions: [String]
 }
 
 class SettingsViewModel: ObservableObject{
@@ -26,20 +31,37 @@ class SettingsViewModel: ObservableObject{
         return UserDefaults.standard.string(forKey: "name") ?? "User Name"
     }
     
-    func getPlist(name: String) -> [String]
+    func getProcessedSuggestions(name: String) -> Suggestions
     {
-        let path = Bundle.main.path(forResource: name, ofType: "plist") ??  ""
-        let xml = FileManager.default.contents(atPath:path)
+        let rawSuggestions = getRawSuggestions(enteredName: name)
+        var suggestionsProcessed:  Suggestions = Suggestions(AngrySuggestions: [],HappySuggestions: [],BlehSuggestions: [],SadSuggestions: [])
         
-        var Plist : [String] = []
-        
-        do{
-            try Plist = PropertyListSerialization.propertyList(from: xml!, options: .mutableContainersAndLeaves, format: nil)  as! [String] 
-        }catch{
-            print("\(error)")
+        if rawSuggestions != nil{
+            suggestionsProcessed.AngrySuggestions = rawSuggestions?.AngrySuggestions ?? ["No Angry Suggestions Detected"]
+            suggestionsProcessed.BlehSuggestions = rawSuggestions?.BlehSuggestions ?? ["No Bleh Suggestions Detected"]
+            suggestionsProcessed.SadSuggestions = rawSuggestions?.SadSuggestions ?? ["No Sad Suggestions Detected"]
+            suggestionsProcessed.HappySuggestions = rawSuggestions?.HappySuggestions ?? ["No Happy Suggestions Detected"]
         }
         
-        return Plist
-
+        return suggestionsProcessed
     }
+    
+    func getRawSuggestions(enteredName: String) -> SuggestionsRaw?{
+        let path = Bundle.main.path(forResource: enteredName, ofType: "plist") ??  ""
+        let xml = FileManager.default.contents(atPath:path) ?? nil
+        var suggestions : SuggestionsRaw? = nil
+        if xml != nil{
+            do{
+                suggestions = try PropertyListDecoder().decode(SuggestionsRaw.self, from: xml!)
+            }catch{
+                print("\(error)")
+            }
+        }else{
+            print("ERROR: invalid XML path for PList")
+        }
+        
+        return suggestions
+    }
+    
+    
 }

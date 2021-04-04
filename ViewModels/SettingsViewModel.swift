@@ -7,6 +7,15 @@
 
 import Foundation
 
+struct Suggestions: Codable {
+    var AngrySuggestions: String
+    var HappySuggestions: String
+    var BlehSuggestions: String
+    var SadSuggestions: String
+    
+    
+}
+
 class SettingsViewModel: ObservableObject{
     
     func saveUserName(enteredName: String){
@@ -17,18 +26,20 @@ class SettingsViewModel: ObservableObject{
         return UserDefaults.standard.string(forKey: "name") ?? "User Name"
     }
     
-    func getPlist(name: String) -> [String]?
+    func getPlist(name: String) -> [String]
     {
         let path = Bundle.main.path(forResource: name, ofType: "plist") ??  ""
         let xml = FileManager.default.contents(atPath:path)
         
         var Plist : [String] = []
         
-        if xml != nil {
-            return (try? PropertyListSerialization.propertyList(from: xml!, options: .mutableContainersAndLeaves, format: nil)) as? [String]
+        do{
+            try Plist = PropertyListSerialization.propertyList(from: xml!, options: .mutableContainersAndLeaves, format: nil)  as! [String] 
+        }catch{
+            print("\(error)")
         }
         
-        return nil
+        return Plist
 
     }
 }

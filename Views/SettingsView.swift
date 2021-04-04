@@ -11,7 +11,6 @@ struct SettingsView: View {
     @ObservedObject var viewModel : SettingsViewModel = SettingsViewModel()
     @State var enteredName: String = ""
     
-    
     var body: some View {
         VStack{
             HStack{
@@ -22,7 +21,9 @@ struct SettingsView: View {
                     .padding()
             }
             List{
-            
+                ForEach(viewModel.getPlist(name: "Suggestions"), id: \.self ){ action in
+                    Text(action)
+                }
             }
         }.padding()
     }

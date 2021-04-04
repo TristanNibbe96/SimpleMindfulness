@@ -28,6 +28,7 @@ struct MainView: View {
                 ContentView(mainView: self)
                 if self.navBarVisible{
                     NavBarView(mainView: self)
+                        //.aspectRatio(contentMode: .fit)
                         .frame(width: scaledWidth,height: scaledHeight)
                         .offset(x: scaledWidth * 0.64)
                 }

@@ -60,7 +60,8 @@ struct NavBarView: View {
                     }
                 })
             }//End list
-            .navigationBarTitle("Navigation")
+            .navigationBarTitle("Nav")
+            .navigationBarHidden(false)
         }//end nav view
     }
 }

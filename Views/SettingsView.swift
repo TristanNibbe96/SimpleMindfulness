@@ -26,11 +26,12 @@ struct SettingsView: View {
             TabView{
                 StringListView(stringList: suggestions.AngrySuggestions)
                     .tabItem {
-                        Image(systemName: "house")
+                        Image("Face_Angry")
+                            .frame(width: 10, height: 10)
                     }
                 StringListView(stringList: suggestions.HappySuggestions)
                     .tabItem {
-                        Image(systemName: "house")
+                        Image(systemName: "face.smiling")
                     }
                 StringListView(stringList: suggestions.SadSuggestions)
                     .tabItem {
@@ -41,7 +42,7 @@ struct SettingsView: View {
                         Image(systemName: "house")
                     }
             }// Tabview
-            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+            .border(Color.gray, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
             Spacer()
         }//VStack
         

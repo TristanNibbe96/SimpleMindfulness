@@ -16,13 +16,16 @@ struct TitleView: View {
     
     var body: some View {
         HStack(alignment: .center){
-            Text("Simple Mindfulness")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             Button(action:
                     toggleNavBar,
                 label: {
-                    Image(systemName: "book")
+                    Image(systemName: "text.justify")
+                        .foregroundColor(.black)
             })//button end
+            Spacer()
+            Text("Simple Mindfulness")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Spacer()
         }//Hstack
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }

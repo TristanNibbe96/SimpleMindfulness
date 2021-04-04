@@ -17,30 +17,46 @@ struct NavBarView: View {
     var body: some View {
         NavigationView{
             List{
-                NavigationLink(
-                    destination: LogView(),
-                    label: {
+                ZStack{
+                    NavigationLink(
+                        destination: LogView(),
+                        label: {
+                            HStack{
+                                Text("Log")
+                                Spacer()
+                                Image(systemName: "book")
+                            }
+                    })//end nav link
                         HStack{
-                            Text("Log")
                             Spacer()
-                            Image(systemName: "book")
+                        Image(systemName: "chevron.right")
                         }
-                })//end nav link
-                NavigationLink(
-                    destination: SettingsView(),
-                    label: {
+                }//End ZStack
+
+
+                ZStack{
+                    NavigationLink(
+                        destination: SettingsView(),
+                        label: {
+                            HStack{
+                                Text("Settings")
+                                Spacer()
+                                Image(systemName: "gear")
+                            }
+                    })//end nav link
                         HStack{
-                            Text("Settings")
                             Spacer()
-                            Image(systemName: "gear")
+                        Image(systemName: "chevron.right")
                         }
-                })//end nav link
+                }//End ZStack
+                
                 Button(action: toggleNavBar
                 ,label: {
                     HStack{
                         Text("Main")
                         Spacer()
                         Image(systemName: "house")
+                        Image(systemName: "chevron.right")
                     }
                 })
             }//End list

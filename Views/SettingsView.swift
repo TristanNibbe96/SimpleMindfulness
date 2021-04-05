@@ -26,20 +26,23 @@ struct SettingsView: View {
             TabView{
                 StringListView(stringList: suggestions.AngrySuggestions)
                     .tabItem {
-                        Image("Face_Angry")
-                            .frame(width: 10, height: 10)
+                        Image("Icon_Angry")
+                        Text("Angry")
                     }
                 StringListView(stringList: suggestions.HappySuggestions)
                     .tabItem {
-                        Image(systemName: "face.smiling")
+                        Image("Icon_Happy")
+                        Text("Happy")
                     }
                 StringListView(stringList: suggestions.SadSuggestions)
                     .tabItem {
-                        Image(systemName: "house")
+                        Image("Icon_Sad")
+                        Text("Sad")
                     }
                 StringListView(stringList: suggestions.BlehSuggestions)
                     .tabItem {
-                        Image(systemName: "house")
+                        Image("Icon_Bleh")
+                        Text("Bleh")
                     }
             }// Tabview
             .border(Color.gray, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)

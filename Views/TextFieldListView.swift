@@ -10,10 +10,11 @@ import SwiftUI
 struct TextFieldListView: View {
     @State var stringList: [String]
     let settingsView: SettingsView
+    var emotion: Int = 0
     
     func setStringAtIndex(index: Int, string: String){
         stringList[index] = string
-        
+        settingsView.changeSuggestions(suggestionType: SettingsView.emotionType(rawValue: emotion)!, suggestions: stringList)
     }
     
     var body: some View {

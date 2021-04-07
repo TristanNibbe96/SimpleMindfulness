@@ -9,17 +9,17 @@ import SwiftUI
 
 struct SettingsView: View {
     @ObservedObject var viewModel : SettingsViewModel = SettingsViewModel()
-    @State var enteredName: String = ""
-    @State var angrySuggestions: [String] = ["angry"]
-    @State var blehSuggestions: [String] = ["bleh"]
-    @State var happySuggestions: [String] = ["happy"]
-    @State var sadSuggestions: [String] = ["sad"]
+    @State private var enteredName: String = ""
+    @State private var angrySuggestions: [String] = ["angry"]
+    @State private var blehSuggestions: [String] = ["bleh"]
+    @State private var happySuggestions: [String] = ["happy"]
+    @State private var sadSuggestions: [String] = ["sad"]
     
-    enum emotionType {
-        case angry
-        case bleh
-        case happy
-        case sad
+    enum emotionType: Int {
+        case angry = 0
+        case bleh = 1
+        case happy = 2
+        case sad = 3
     }
     
     func changeSuggestions(suggestionType: emotionType, suggestions: [String]){

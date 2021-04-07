@@ -22,6 +22,7 @@ struct Suggestions{
 }
 
 class SettingsViewModel: ObservableObject{
+
     
     func saveUserName(enteredName: String){
         UserDefaults.standard.set(enteredName, forKey: "name")

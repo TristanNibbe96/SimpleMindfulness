@@ -24,22 +24,22 @@ struct SettingsView: View {
                     .padding()
             }
             TabView{
-                StringListView(stringList: suggestions.AngrySuggestions)
+                TextFieldListView(stringList: suggestions.AngrySuggestions)
                     .tabItem {
                         Image("Icon_Angry")
                         Text("Angry")
                     }
-                StringListView(stringList: suggestions.HappySuggestions)
+                TextFieldListView(stringList: suggestions.HappySuggestions)
                     .tabItem {
                         Image("Icon_Happy")
                         Text("Happy")
                     }
-                StringListView(stringList: suggestions.SadSuggestions)
+                TextFieldListView(stringList: suggestions.SadSuggestions)
                     .tabItem {
                         Image("Icon_Sad")
                         Text("Sad")
                     }
-                StringListView(stringList: suggestions.BlehSuggestions)
+                TextFieldListView(stringList: suggestions.BlehSuggestions)
                     .tabItem {
                         Image("Icon_Bleh")
                         Text("Bleh")

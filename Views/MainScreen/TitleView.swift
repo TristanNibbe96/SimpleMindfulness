@@ -2,7 +2,7 @@
 //  TitleView.swift
 //  SimpleMindfulness
 //
-//  Created by user192295 on 4/2/21.
+//  Created by Tristan Nibbe on 4/2/21.
 //
 
 import SwiftUI

@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct TextFieldListView: View {
-    var stringList: [String]
+    @State var stringList: [String]
+    let settingsView: SettingsView
+    
+    func setStringAtIndex(index: Int, string: String){
+        stringList[index] = string
+        
+    }
     
     var body: some View {
 
         List{
-            ForEach(stringList, id: \.self ){ string in
-                TextFieldView(text: string)
+            ForEach(stringList.indices, id: \.self ){ i in
+                TextFieldView(text: stringList[i], index: i, fieldList: self)
             }
         }
 
@@ -23,6 +29,6 @@ struct TextFieldListView: View {
 
 struct TextFieldListView_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldListView(stringList: ["String"])
+        TextFieldListView(stringList: ["String"], settingsView: SettingsView())
     }
 }

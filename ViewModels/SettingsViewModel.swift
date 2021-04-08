@@ -22,7 +22,10 @@ struct Suggestions{
 }
 
 class SettingsViewModel: ObservableObject{
-    
+    private var plistURL: URL{
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        return documents.appendingPathComponent("Suggestions.plist")
+    }
     
     func saveUserName(enteredName: String){
         UserDefaults.standard.set(enteredName, forKey: "name")
@@ -46,17 +49,14 @@ class SettingsViewModel: ObservableObject{
         let suggestions = packageSuggestionArraysIntoObject(angry: angry, bleh: bleh, happy: happy, sad: sad)
         let encoder =  PropertyListEncoder()
         encoder.outputFormat = .xml
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(name + ".plist")
-        //let path = Bundle.main.path(forResource: name, ofType: "plist") ??  ""
-        //let url = URL(string: path)
-
         let suggestionsRaw = processedToRawSuggestionConversion(suggestions: suggestions, name: name)
         
-        do{
-            let data = try encoder.encode(suggestionsRaw)
-            try data.write(to: path)
-        }catch{
-            print(error)
+        if let data = try? encoder.encode(suggestionsRaw){
+            if FileManager.default.fileExists(atPath: plistURL.path){
+                try? data.write(to: plistURL)
+            }else{
+                FileManager.default.createFile(atPath: plistURL.path, contents: data, attributes: nil)
+            }
         }
     }
     
@@ -66,35 +66,40 @@ class SettingsViewModel: ObservableObject{
         var suggestionsProcessed:  Suggestions = Suggestions(AngrySuggestions: [],HappySuggestions: [],BlehSuggestions: [],SadSuggestions: [])
         
         
-        if rawSuggestions != nil{
-            suggestionsProcessed.AngrySuggestions = rawSuggestions?.AngrySuggestions ?? ["No Angry Suggestions Detected"]
-            suggestionsProcessed.BlehSuggestions = rawSuggestions?.BlehSuggestions ?? ["No Bleh Suggestions Detected"]
-            suggestionsProcessed.SadSuggestions = rawSuggestions?.SadSuggestions ?? ["No Sad Suggestions Detected"]
-            suggestionsProcessed.HappySuggestions = rawSuggestions?.HappySuggestions ?? ["No Happy Suggestions Detected"]
-        }
+        suggestionsProcessed.AngrySuggestions = rawSuggestions.AngrySuggestions
+        suggestionsProcessed.BlehSuggestions = rawSuggestions.BlehSuggestions
+        suggestionsProcessed.SadSuggestions = rawSuggestions.SadSuggestions
+        suggestionsProcessed.HappySuggestions = rawSuggestions.HappySuggestions
         
         return suggestionsProcessed
     }
     
-    func getRawSuggestions(enteredName: String) -> SuggestionsRaw?{
-        let path = Bundle.main.path(forResource: enteredName, ofType: "plist") ??  ""
-        let xml = FileManager.default.contents(atPath:path) ?? nil
-        var suggestions : SuggestionsRaw? = nil
-        if xml != nil{
-            do{
-                suggestions = try PropertyListDecoder().decode(SuggestionsRaw.self, from: xml!)
-            }catch{
-                print("\(error)")
-            }
-        }else{
-            print("ERROR: invalid XML path for PList")
+    func getRawSuggestions(enteredName: String) -> SuggestionsRaw{
+        let decoder = PropertyListDecoder()
+        
+        guard let data = try? Data.init(contentsOf: plistURL),
+              let suggestionsRaw = try? decoder.decode(SuggestionsRaw.self, from: data)
+        else{
+            //TODO sett to get and return a default value
+            return getDefaultValuesFromBundle()
         }
-                
-        return suggestions
+        
+        return suggestionsRaw
+        
+    }
+    
+    func getDefaultValuesFromBundle() -> SuggestionsRaw{
+        let path = Bundle.main.path(forResource: "Suggestions", ofType:  "plist")
+        let data = FileManager.default.contents(atPath: path!)
+        let decoder = PropertyListDecoder()
+        
+        let rawSuggestions = try! decoder.decode(SuggestionsRaw.self, from: data!)
+        
+        return rawSuggestions
     }
         
     func processedToRawSuggestionConversion(suggestions: Suggestions, name: String) -> SuggestionsRaw{
-        var rawSuggestions = getRawSuggestions(enteredName: name)!
+        var rawSuggestions = getRawSuggestions(enteredName: name)
         
         rawSuggestions.AngrySuggestions = suggestions.AngrySuggestions
         rawSuggestions.BlehSuggestions = suggestions.BlehSuggestions

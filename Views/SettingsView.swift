@@ -22,6 +22,10 @@ struct SettingsView: View {
         case sad = 3
     }
     
+    func saveSuggestions(){
+        viewModel.saveSuggestions(angry: angrySuggestions, bleh: blehSuggestions, happy: happySuggestions, sad: sadSuggestions, name: "Suggestions")
+    }
+    
     func changeSuggestions(suggestionType: emotionType, suggestions: [String]){
         switch suggestionType {
         case emotionType.angry:
@@ -36,8 +40,6 @@ struct SettingsView: View {
             print("ERROR: Invalid suggestion type sent to changeSelection function in SettingsView")
         }
     }
-    
-
 
     
     var body: some View {
@@ -76,6 +78,15 @@ struct SettingsView: View {
             }// Tabview
             .border(Color.gray, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
             Spacer()
+            
+            HStack{
+                Spacer()
+                Button(action: saveSuggestions
+                ,label: {
+                    Text("Save Changes")
+                })
+                Spacer()
+            }
         }//VStack
         
     }

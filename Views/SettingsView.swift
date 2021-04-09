@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @ObservedObject var viewModel : SettingsViewModel = SettingsViewModel()
     @State private var enteredName: String = ""
+    @State private var currentlySelectedEmotion: emotionType = SettingsView.emotionType.angry
     @State private var angrySuggestions: [String] = ["angry"]
     @State private var blehSuggestions: [String] = ["bleh"]
     @State private var happySuggestions: [String] = ["happy"]
@@ -20,6 +21,14 @@ struct SettingsView: View {
         case bleh = 1
         case happy = 2
         case sad = 3
+    }
+    
+    func deleteSuggestion(){
+        
+    }
+    
+    func addNewSuggestions(){
+        angrySuggestions.append("")
     }
     
     func saveSuggestions(){
@@ -43,10 +52,9 @@ struct SettingsView: View {
 
     
     var body: some View {
-        let suggestions: Suggestions = viewModel.getProcessedSuggestions(name: "Suggestions")
+        let suggestions: Suggestions = viewModel.getSuggestions()
 
         VStack{
-            Spacer()
             HStack{
                 Text("Name: ")
                     .padding()
@@ -55,7 +63,7 @@ struct SettingsView: View {
                     .padding()
             }
             TabView{
-                TextFieldListView(stringList: suggestions.AngrySuggestions, settingsView: self)
+                TextFieldListView(stringList: angrySuggestions, settingsView: self)
                     .tabItem {
                         Image("Icon_Angry")
                         Text("Angry")
@@ -80,12 +88,15 @@ struct SettingsView: View {
             Spacer()
             
             HStack{
+
                 Spacer()
+                
                 Button(action: saveSuggestions
                 ,label: {
                     Text("Save Changes")
                 })
                 Spacer()
+
             }
         }//VStack
         

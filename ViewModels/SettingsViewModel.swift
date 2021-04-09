@@ -7,14 +7,8 @@
 
 import Foundation
 
-struct SuggestionsRaw: Codable {
-    var AngrySuggestions: [String]
-    var HappySuggestions: [String]
-    var BlehSuggestions: [String]
-    var SadSuggestions: [String]
-}
 
-struct Suggestions{
+struct Suggestions: Codable{
     var AngrySuggestions: [String] = []
     var HappySuggestions: [String] = []
     var BlehSuggestions: [String] = []
@@ -49,9 +43,8 @@ class SettingsViewModel: ObservableObject{
         let suggestions = packageSuggestionArraysIntoObject(angry: angry, bleh: bleh, happy: happy, sad: sad)
         let encoder =  PropertyListEncoder()
         encoder.outputFormat = .xml
-        let suggestionsRaw = processedToRawSuggestionConversion(suggestions: suggestions, name: name)
         
-        if let data = try? encoder.encode(suggestionsRaw){
+        if let data = try? encoder.encode(suggestions){
             if FileManager.default.fileExists(atPath: plistURL.path){
                 try? data.write(to: plistURL)
             }else{
@@ -60,51 +53,26 @@ class SettingsViewModel: ObservableObject{
         }
     }
     
-    func getProcessedSuggestions(name: String) -> Suggestions
-    {
-        let rawSuggestions = getRawSuggestions(enteredName: name)
-        var suggestionsProcessed:  Suggestions = Suggestions(AngrySuggestions: [],HappySuggestions: [],BlehSuggestions: [],SadSuggestions: [])
-        
-        
-        suggestionsProcessed.AngrySuggestions = rawSuggestions.AngrySuggestions
-        suggestionsProcessed.BlehSuggestions = rawSuggestions.BlehSuggestions
-        suggestionsProcessed.SadSuggestions = rawSuggestions.SadSuggestions
-        suggestionsProcessed.HappySuggestions = rawSuggestions.HappySuggestions
-        
-        return suggestionsProcessed
-    }
     
-    func getRawSuggestions(enteredName: String) -> SuggestionsRaw{
+    func getSuggestions() -> Suggestions{
         let decoder = PropertyListDecoder()
         
         guard let data = try? Data.init(contentsOf: plistURL),
-              let suggestionsRaw = try? decoder.decode(SuggestionsRaw.self, from: data)
+              let suggestions = try? decoder.decode(Suggestions.self, from: data)
         else{
             //TODO sett to get and return a default value
             return getDefaultValuesFromBundle()
         }
         
-        return suggestionsRaw
-        
+        return suggestions
     }
     
-    func getDefaultValuesFromBundle() -> SuggestionsRaw{
+    func getDefaultValuesFromBundle() -> Suggestions{
         let path = Bundle.main.path(forResource: "Suggestions", ofType:  "plist")
         let data = FileManager.default.contents(atPath: path!)
         let decoder = PropertyListDecoder()
         
-        let rawSuggestions = try! decoder.decode(SuggestionsRaw.self, from: data!)
-        
-        return rawSuggestions
-    }
-        
-    func processedToRawSuggestionConversion(suggestions: Suggestions, name: String) -> SuggestionsRaw{
-        var rawSuggestions = getRawSuggestions(enteredName: name)
-        
-        rawSuggestions.AngrySuggestions = suggestions.AngrySuggestions
-        rawSuggestions.BlehSuggestions = suggestions.BlehSuggestions
-        rawSuggestions.HappySuggestions = suggestions.HappySuggestions
-        rawSuggestions.SadSuggestions = suggestions.SadSuggestions
+        let rawSuggestions = try! decoder.decode(Suggestions.self, from: data!)
         
         return rawSuggestions
     }

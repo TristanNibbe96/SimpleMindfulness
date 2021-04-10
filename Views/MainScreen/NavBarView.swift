@@ -33,7 +33,6 @@ struct NavBarView: View {
                         }
                 }//End ZStack
 
-
                 ZStack{
                     NavigationLink(
                         destination: SettingsView(),

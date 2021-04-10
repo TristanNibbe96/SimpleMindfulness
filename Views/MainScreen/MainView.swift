@@ -27,6 +27,7 @@ struct MainView: View {
         
         if self.navBarVisible{
             NavBarView(mainView: self)
+                //.frame(width: scaledWidth, height: scaledHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         }else{
             ContentView(mainView: self)
         }

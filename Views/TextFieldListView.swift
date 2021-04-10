@@ -11,6 +11,11 @@ struct TextFieldListView: View {
     @State var stringList: [String]
     let settingsView: SettingsView
     var emotion: Int = 0
+    
+    func saveSuggestions(){
+
+        settingsView.saveSuggestions()
+    }
 
     func setStringAtIndex(index: Int, string: String){
         stringList[index] = string
@@ -19,10 +24,14 @@ struct TextFieldListView: View {
     
     func addNewSuggestions(){
         stringList.append("")
+        settingsView.changeSuggestions(suggestionType: SettingsView.emotionType(rawValue: emotion)!, suggestions: stringList)
     }
     
     func deleteSuggestion(){
-        stringList.remove(at: stringList.count-1)
+        if(stringList.count > 0){
+            stringList.remove(at: stringList.count-1)
+            settingsView.changeSuggestions(suggestionType: SettingsView.emotionType(rawValue: emotion)!, suggestions: stringList)
+        }
     }
     
     var body: some View {
@@ -40,6 +49,13 @@ struct TextFieldListView: View {
                 })
                     
                 Spacer()
+                
+                Button(action: saveSuggestions
+                ,label: {
+                    Text("Save Changes")
+                })
+                Spacer()
+                
                 Button(action: deleteSuggestion
                 ,label: {
                     Image(systemName: "minus")

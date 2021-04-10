@@ -59,8 +59,9 @@ struct NavBarView: View {
                     }
                 })
             }//End list
-            .navigationBarTitle("Navigation")
+            .navigationBarTitle("Navigation",displayMode: .inline)
             .navigationBarHidden(false)
+            
         }//end nav view
     }
 }

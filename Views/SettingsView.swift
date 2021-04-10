@@ -46,11 +46,11 @@ struct SettingsView: View {
         VStack{
             HStack{
                 Text("Name: ")
-                    .padding()
+                    .padding(.horizontal)
                 TextField("\(viewModel.getSavedName())", text: $enteredName){_ in
                 }onCommit:{viewModel.saveUserName(enteredName: enteredName)}
-                    .padding()
             }
+            .padding()
             TabView{
                 TextFieldListView(stringList: angrySuggestions, settingsView: self,emotion: emotionType.angry.rawValue)
                     .tabItem {
@@ -75,6 +75,8 @@ struct SettingsView: View {
 
             }// Tabview
             .border(Color.gray, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+            .navigationBarTitle("Settings",displayMode: .inline)
+            .navigationBarHidden(false)
         }//VStack
         .onAppear(){
             currentlySelectedEmotion = emotionType.angry

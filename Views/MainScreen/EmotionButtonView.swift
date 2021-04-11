@@ -16,9 +16,10 @@ struct EmotionButtonView: View {
     
     func logEmotion(){
         viewModel.logEmotion(emotion: emotion)
-        radialMenu.closeRadialMenu()
+        radialMenu.mainView.changeEmotion(emotion: emotion)
+        radialMenu.closeRadialMenuAndOpenSuggestion(openSuggestion: true)
     }
-    
+        
     func setImageAndText(){
         emotionText = viewModel.buttonText(emotion: emotion)
         imageName = viewModel.imageText(emotion: emotion)

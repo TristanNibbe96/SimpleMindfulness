@@ -15,9 +15,11 @@ struct RadialMenuButtonView: View {
         radialMenuOpen = true
     }
     
-    func closeRadialMenu(){
+    func closeRadialMenuAndOpenSuggestion(openSuggestion: Bool){
         radialMenuOpen = false
-        mainView.toggleSuggestionScreen()
+        if(openSuggestion){
+            mainView.toggleSuggestionScreen()
+        }
     }
     
     var body: some View {
@@ -34,7 +36,7 @@ struct RadialMenuButtonView: View {
                 }
             )//EndButton
             if self.radialMenuOpen{
-                RadialMenuView(radialMenu: self)
+                RadialMenuView(radialMenuButton: self)
             }
         }//End ZStack
     }

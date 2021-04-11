@@ -11,6 +11,11 @@ struct MainView: View {
     
     @State var navBarVisible = false
     @State var suggestionScreenVisible = false
+    @State var selectedEmotion = emotionType.angry
+    
+    func changeEmotion(emotion: emotionType){
+        selectedEmotion = emotion
+    }
     
     func toggleNavBar(){
         navBarVisible.toggle()
@@ -33,7 +38,7 @@ struct MainView: View {
         if self.navBarVisible{
             NavBarView(mainView: self)
         }else if self.suggestionScreenVisible{
-            SuggestionView(mainView: self)
+            SuggestionView(emotion: selectedEmotion, mainView: self)
         }else {
             ContentView(mainView: self)
         }

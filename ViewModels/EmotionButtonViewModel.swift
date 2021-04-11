@@ -1,0 +1,48 @@
+//
+//  EmotionButtonViewModel.swift
+//  SimpleMindfulness (iOS)
+//
+//  Created by Tristan Nibbe on 4/10/21.
+//
+
+import Foundation
+
+class EmotionButtonViewModel: ObservableObject{
+    func buttonText(emotion: emotionType) -> String{
+        var emotionText = ""
+        
+        switch emotion {
+        case emotionType.angry:
+            emotionText = "Angry"
+        case emotionType.bleh:
+            emotionText = "Bleh"
+        case emotionType.happy:
+            emotionText = "Happy"
+        case emotionType.sad:
+            emotionText = "Sad"
+        default:
+            "Unreselved emotion type"
+        }
+        
+        return emotionText
+    }
+    
+    func imageText(emotion: emotionType) -> String{
+        var imageText = ""
+        
+        switch emotion {
+        case emotionType.angry:
+            imageText = "Face_Angry"
+        case emotionType.bleh:
+            imageText = "Face_Bleh"
+        case emotionType.happy:
+            imageText = "Face_Happy"
+        case emotionType.sad:
+            imageText = "Face_Sad"
+        default:
+            "Unreselved emotion type"
+        }
+        
+        return imageText
+    }
+}

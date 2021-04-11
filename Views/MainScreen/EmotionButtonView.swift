@@ -8,18 +8,28 @@
 import SwiftUI
 
 struct EmotionButtonView: View {
+    @ObservedObject var viewModel = EmotionButtonViewModel()
+    @State var emotion = emotionType.angry
+    @State var emotionText = "Happy"
+    @State var imageName = "Face_Happy"
+    
     func logEmotion(){
         
+    }
+    
+    func setImageAndText(){
+        emotionText = viewModel.buttonText(emotion: emotion)
+        imageName = viewModel.imageText(emotion: emotion)
     }
     
     var body: some View {
         Button(action: {self.logEmotion()}
             ,label: {
                 VStack(alignment: .center, spacing: 0, content: {
-                    Text("Happy")
+                    Text(emotionText)
                         .font(.title)
                         .foregroundColor(Color.red)
-                    Image("Face_Happy")
+                    Image(imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 })//End Vstack
@@ -27,7 +37,11 @@ struct EmotionButtonView: View {
         )//End Button
         .background(Color.white)
         .cornerRadius(20)
+        .onAppear(){
+            setImageAndText()
+        }
     }
+
 }
 
 struct EmotionButtonView_Previews: PreviewProvider {

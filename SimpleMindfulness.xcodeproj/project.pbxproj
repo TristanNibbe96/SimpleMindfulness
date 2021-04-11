@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F919AB8926227FF200ED9420 /* EmotionButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919AB8826227FF200ED9420 /* EmotionButtonViewModel.swift */; };
 		F91A9CC2261456D200893BEE /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CC1261456D200893BEE /* Tests_iOS.swift */; };
 		F91A9CCD261456D200893BEE /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CCC261456D200893BEE /* Tests_macOS.swift */; };
 		F91A9CCF261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CA6261456D000893BEE /* SimpleMindfulnessApp.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F919AB8826227FF200ED9420 /* EmotionButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButtonViewModel.swift; sourceTree = "<group>"; };
 		F91A9CA6261456D000893BEE /* SimpleMindfulnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMindfulnessApp.swift; sourceTree = "<group>"; };
 		F91A9CA7261456D000893BEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F91A9CA8261456D200893BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				F9C6A7912616E65A001418A3 /* ContentViewModel.swift */,
 				F9C6A7972616EA2F001418A3 /* SettingsViewModel.swift */,
+				F919AB8826227FF200ED9420 /* EmotionButtonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				F9C37B9E261633B0008D7A3E /* RadialMenuView.swift in Sources */,
 				F91A9CD1261456D200893BEE /* ContentView.swift in Sources */,
 				F91A9CCF261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
+				F919AB8926227FF200ED9420 /* EmotionButtonViewModel.swift in Sources */,
 				F9C6A7982616EA2F001418A3 /* SettingsViewModel.swift in Sources */,
 				F99F4C33261D9B8800D282B5 /* TextFieldView.swift in Sources */,
 				F9FF80D8261696C400190D34 /* LogView.swift in Sources */,

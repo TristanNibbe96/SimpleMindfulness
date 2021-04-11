@@ -14,17 +14,17 @@ struct RadialMenuView: View {
         
     var body: some View {
         VStack{
-            EmotionButtonView()
+            EmotionButtonView(emotion: emotionType.angry)
                 .frame(width: scaledWidth, height: scaledWidth)
             HStack{
-                EmotionButtonView()
+                EmotionButtonView(emotion: emotionType.bleh)
                     .frame(width: scaledWidth, height: scaledWidth)
                 Spacer()
-                EmotionButtonView()
+                EmotionButtonView(emotion: emotionType.happy)
                     .frame(width: scaledWidth, height: scaledWidth)
                     
             }//end HStack
-            EmotionButtonView()
+            EmotionButtonView(emotion: emotionType.sad)
                 .frame(width: scaledWidth, height: scaledWidth)
         }//EndVStack
         .frame(width:scaledWidth * 3)

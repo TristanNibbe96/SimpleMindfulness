@@ -33,8 +33,6 @@ struct SettingsView: View {
             happySuggestions = suggestions
         case emotionType.sad:
             sadSuggestions = suggestions
-        default:
-            print("ERROR: Invalid suggestion type sent to changeSelection function in SettingsView")
         }
     }
     

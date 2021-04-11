@@ -12,9 +12,11 @@ struct EmotionButtonView: View {
     @State var emotion = emotionType.angry
     @State var emotionText = "Happy"
     @State var imageName = "Face_Happy"
+    var radialMenu: RadialMenuButtonView
     
     func logEmotion(){
-        
+        viewModel.logEmotion(emotion: emotion)
+        radialMenu.closeRadialMenu()
     }
     
     func setImageAndText(){
@@ -46,6 +48,6 @@ struct EmotionButtonView: View {
 
 struct EmotionButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        EmotionButtonView()
+        EmotionButtonView(radialMenu: RadialMenuButtonView(mainView: MainView()))
     }
 }

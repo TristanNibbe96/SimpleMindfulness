@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct RadialMenuView: View {
+    var radialMenu: RadialMenuButtonView
     var scaledWidth: CGFloat{
         return UIScreen.main.bounds.width * 0.25;
     }
         
     var body: some View {
         VStack{
-            EmotionButtonView(emotion: emotionType.angry)
+            EmotionButtonView(emotion: emotionType.angry, radialMenu: radialMenu)
                 .frame(width: scaledWidth, height: scaledWidth)
             HStack{
-                EmotionButtonView(emotion: emotionType.bleh)
+                EmotionButtonView(emotion: emotionType.bleh, radialMenu: radialMenu)
                     .frame(width: scaledWidth, height: scaledWidth)
                 Spacer()
-                EmotionButtonView(emotion: emotionType.happy)
+                EmotionButtonView(emotion: emotionType.happy, radialMenu: radialMenu)
                     .frame(width: scaledWidth, height: scaledWidth)
                     
             }//end HStack
-            EmotionButtonView(emotion: emotionType.sad)
+            EmotionButtonView(emotion: emotionType.sad, radialMenu: radialMenu)
                 .frame(width: scaledWidth, height: scaledWidth)
         }//EndVStack
         .frame(width:scaledWidth * 3)
@@ -35,6 +36,6 @@ struct RadialMenuView: View {
 
 struct RadialMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        RadialMenuView()
+        RadialMenuView(radialMenu: RadialMenuButtonView(mainView: MainView()))
     }
 }

@@ -20,11 +20,9 @@ class EmotionButtonViewModel: ObservableObject{
             emotionText = "Happy"
         case emotionType.sad:
             emotionText = "Sad"
-        default:
-            "Unreselved emotion type"
         }
-        
         return emotionText
+        
     }
     
     func imageText(emotion: emotionType) -> String{
@@ -39,10 +37,12 @@ class EmotionButtonViewModel: ObservableObject{
             imageText = "Face_Happy"
         case emotionType.sad:
             imageText = "Face_Sad"
-        default:
-            "Unreselved emotion type"
         }
         
         return imageText
+    }
+    
+    func logEmotion(emotion: emotionType){
+        
     }
 }

@@ -36,7 +36,7 @@ struct ContentView: View {
                     GreetingMessageView()
                     Spacer()
                     Spacer()
-                    RadialMenuButtonView()
+                    RadialMenuButtonView(mainView: mainView)
                     Spacer()
                 }//VStack end
                 .frame(width: scaledWidth, height: scaledHeight)

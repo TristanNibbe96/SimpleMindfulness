@@ -9,8 +9,15 @@ import SwiftUI
 
 struct RadialMenuButtonView: View {
     @State var radialMenuOpen = false
+    var mainView: MainView
+    
     func openRadialMenu(){
         radialMenuOpen = true
+    }
+    
+    func closeRadialMenu(){
+        radialMenuOpen = false
+        mainView.toggleSuggestionScreen()
     }
     
     var body: some View {
@@ -27,7 +34,7 @@ struct RadialMenuButtonView: View {
                 }
             )//EndButton
             if self.radialMenuOpen{
-                RadialMenuView()
+                RadialMenuView(radialMenu: self)
             }
         }//End ZStack
     }
@@ -35,6 +42,6 @@ struct RadialMenuButtonView: View {
 
 struct RadialMenuButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        RadialMenuButtonView()
+        RadialMenuButtonView(mainView: MainView())
     }
 }

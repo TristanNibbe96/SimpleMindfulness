@@ -10,9 +10,14 @@ import SwiftUI
 struct MainView: View {
     
     @State var navBarVisible = false
+    @State var suggestionScreenVisible = false
     
     func toggleNavBar(){
         navBarVisible.toggle()
+    }
+    
+    func toggleSuggestionScreen(){
+        suggestionScreenVisible.toggle()
     }
     
     var scaledWidth: CGFloat{
@@ -27,7 +32,9 @@ struct MainView: View {
         
         if self.navBarVisible{
             NavBarView(mainView: self)
-        }else{
+        }else if self.suggestionScreenVisible{
+            SuggestionView(mainView: self)
+        }else {
             ContentView(mainView: self)
         }
     }

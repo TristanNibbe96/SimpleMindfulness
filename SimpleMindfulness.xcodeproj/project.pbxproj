@@ -123,6 +123,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F919AB8326227C8B00ED9420 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				F9FF80C92616924B00190D34 /* SettingsView.swift */,
+				F9766934261A49AC00936D13 /* TextFieldListView.swift */,
+				F99F4C32261D9B8800D282B5 /* TextFieldView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
 		F91A9CA0261456D000893BEE = {
 			isa = PBXGroup;
 			children = (
@@ -220,11 +230,9 @@
 		F9FF80B92616820600190D34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F919AB8326227C8B00ED9420 /* SettingsView */,
 				F9589D36261810A2004B800B /* MainScreen */,
-				F9FF80C92616924B00190D34 /* SettingsView.swift */,
 				F9FF80D7261696C400190D34 /* LogView.swift */,
-				F9766934261A49AC00936D13 /* TextFieldListView.swift */,
-				F99F4C32261D9B8800D282B5 /* TextFieldView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

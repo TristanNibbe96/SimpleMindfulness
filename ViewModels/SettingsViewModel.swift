@@ -7,6 +7,13 @@
 
 import Foundation
 
+enum emotionType: Int {
+     case angry = 0
+     case bleh = 1
+     case happy = 2
+     case sad = 3
+    
+}
 
 struct Suggestions: Codable{
     var AngrySuggestions: [String] = []

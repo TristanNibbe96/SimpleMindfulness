@@ -10,7 +10,7 @@ import SwiftUI
 struct TextFieldListView: View {
     @State var stringList: [String]
     let settingsView: SettingsView
-    var emotion: Int = 0
+    var emotion = emotionType.angry
     
     func saveSuggestions(){
 
@@ -19,18 +19,18 @@ struct TextFieldListView: View {
 
     func setStringAtIndex(index: Int, string: String){
         stringList[index] = string
-        settingsView.changeSuggestions(suggestionType: SettingsView.emotionType(rawValue: emotion)!, suggestions: stringList)
+        settingsView.changeSuggestions(suggestionType: emotion,suggestions: stringList)
     }
     
     func addNewSuggestions(){
         stringList.append("")
-        settingsView.changeSuggestions(suggestionType: SettingsView.emotionType(rawValue: emotion)!, suggestions: stringList)
+        settingsView.changeSuggestions(suggestionType: emotion, suggestions: stringList)
     }
     
     func deleteSuggestion(){
         if(stringList.count > 0){
             stringList.remove(at: stringList.count-1)
-            settingsView.changeSuggestions(suggestionType: SettingsView.emotionType(rawValue: emotion)!, suggestions: stringList)
+            settingsView.changeSuggestions(suggestionType: emotion, suggestions: stringList)
         }
     }
     

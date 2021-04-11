@@ -7,21 +7,17 @@
 
 import SwiftUI
 
+
 struct SettingsView: View {
     @ObservedObject var viewModel : SettingsViewModel = SettingsViewModel()
     @State private var enteredName: String = SettingsViewModel().getSavedName()
-    @State private var currentlySelectedEmotion: emotionType = SettingsView.emotionType.angry
+    @State private var currentlySelectedEmotion = emotionType.angry
     @State private var angrySuggestions: [String] = SettingsViewModel().getSuggestions().AngrySuggestions
     @State private var blehSuggestions: [String] = SettingsViewModel().getSuggestions().BlehSuggestions
     @State private var happySuggestions: [String] = SettingsViewModel().getSuggestions().HappySuggestions
     @State private var sadSuggestions: [String] = SettingsViewModel().getSuggestions().SadSuggestions
     
-    enum emotionType: Int {
-        case angry = 0
-        case bleh = 1
-        case happy = 2
-        case sad = 3
-    }
+
     
     func saveSuggestions(){
         viewModel.saveSuggestions(angry: angrySuggestions, bleh: blehSuggestions, happy: happySuggestions, sad: sadSuggestions, name: "Suggestions")
@@ -52,22 +48,22 @@ struct SettingsView: View {
             }
             .padding()
             TabView{
-                TextFieldListView(stringList: angrySuggestions, settingsView: self,emotion: emotionType.angry.rawValue)
+                TextFieldListView(stringList: angrySuggestions, settingsView: self,emotion: emotionType.angry)
                     .tabItem {
                         Image("Icon_Angry")
                         Text("Angry")
                     }
-                TextFieldListView(stringList: blehSuggestions, settingsView: self, emotion: emotionType.bleh.rawValue)
+                TextFieldListView(stringList: blehSuggestions, settingsView: self, emotion: emotionType.bleh)
                     .tabItem {
                         Image("Icon_Bleh")
                         Text("Bleh")
                     }
-                TextFieldListView(stringList: happySuggestions, settingsView: self,emotion: emotionType.happy.rawValue)
+                TextFieldListView(stringList: happySuggestions, settingsView: self,emotion: emotionType.happy)
                     .tabItem {
                         Image("Icon_Happy")
                         Text("Happy")
                     }
-                TextFieldListView(stringList: sadSuggestions, settingsView: self, emotion: emotionType.sad.rawValue)
+                TextFieldListView(stringList: sadSuggestions, settingsView: self, emotion: emotionType.sad)
                     .tabItem {
                         Image("Icon_Sad")
                         Text("Sad")

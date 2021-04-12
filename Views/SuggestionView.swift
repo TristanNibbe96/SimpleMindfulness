@@ -2,16 +2,15 @@
 //  SuggestionView.swift
 //  SimpleMindfulness
 //
-//  Created by user192295 on 4/10/21.
+//  Created by Tristan Nibbe on 4/10/21.
 //
 
 import SwiftUI
 
 struct SuggestionView: View {
-    @State var emotion = emotionType.angry
     @State var currentSuggestionIndex = 0
     var mainView: MainView
-    var suggestion: [String] = ["1","2"]
+    var suggestion: [String]
     
     func iterateSuggestionIndex(){
         currentSuggestionIndex += 1
@@ -51,6 +50,6 @@ struct SuggestionView: View {
 
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
-        SuggestionView(mainView: MainView())
+        SuggestionView(mainView: MainView(), suggestion: ["1","2"])
     }
 }

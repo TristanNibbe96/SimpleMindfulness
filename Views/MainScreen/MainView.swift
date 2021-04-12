@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    
+    let viewModel = MainViewModel()
     @State var navBarVisible = false
     @State var suggestionScreenVisible = false
     @State var selectedEmotion = emotionType.angry
@@ -38,7 +38,7 @@ struct MainView: View {
         if self.navBarVisible{
             NavBarView(mainView: self)
         }else if self.suggestionScreenVisible{
-            SuggestionView(emotion: selectedEmotion, mainView: self)
+            SuggestionView(mainView: self, suggestion: viewModel.getSuggestionListFromSaved(emotion:selectedEmotion))
         }else {
             ContentView(mainView: self)
         }

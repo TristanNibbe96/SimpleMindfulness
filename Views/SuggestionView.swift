@@ -9,7 +9,16 @@ import SwiftUI
 
 struct SuggestionView: View {
     @State var emotion = emotionType.angry
+    @State var currentSuggestionIndex = 0
     var mainView: MainView
+    var suggestion: [String] = ["1","2"]
+    
+    func iterateSuggestionIndex(){
+        currentSuggestionIndex += 1
+        if(currentSuggestionIndex >= suggestion.count){
+            currentSuggestionIndex = 0
+        }
+    }
     
     var body: some View {
         VStack{
@@ -25,7 +34,16 @@ struct SuggestionView: View {
             }
             
             Spacer()
-            Text("Hello, World!")
+            HStack{
+                Spacer()
+                Text(suggestion[currentSuggestionIndex])
+                Spacer()
+                Button(action: iterateSuggestionIndex
+                ,label: {
+                    Image(systemName:"arrow.right")
+                })
+                    .padding()
+            }
             Spacer()
         }
     }

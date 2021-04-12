@@ -12,6 +12,7 @@ struct MainView: View {
     @State var navBarVisible = false
     @State var suggestionScreenVisible = false
     @State var selectedEmotion = emotionType.angry
+    @State var seenPrivacyPolicy = MainViewModel().seenPrivacyPolicy()
     
     func changeEmotion(emotion: emotionType){
         selectedEmotion = emotion
@@ -34,8 +35,9 @@ struct MainView: View {
     }
     
     var body: some View {
-        
-        if self.navBarVisible{
+        if !seenPrivacyPolicy{
+            OpeningScreenView()
+        }else if self.navBarVisible{
             NavBarView(mainView: self)
         }else if self.suggestionScreenVisible{
             SuggestionView(mainView: self, suggestion: viewModel.getSuggestionListFromSaved(emotion:selectedEmotion))

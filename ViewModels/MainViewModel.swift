@@ -26,5 +26,13 @@ class MainViewModel: SettingsViewModel{
         
         return suggestionList
     }
+    
+    func seenPrivacyPolicy() -> Bool{
+        var seen = false
+        
+        seen = UserDefaults.standard.bool(forKey: "seenPrivacyPolicy") 
+
+        return seen
+    }
 }
 

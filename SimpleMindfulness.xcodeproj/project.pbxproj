@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F9098FA026242449005314EC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9098F9F26242449005314EC /* MainViewModel.swift */; };
+		F9098FA626242AC3005314EC /* OpeningScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9098FA526242AC3005314EC /* OpeningScreenView.swift */; };
 		F919AB8926227FF200ED9420 /* EmotionButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919AB8826227FF200ED9420 /* EmotionButtonViewModel.swift */; };
 		F919AB8F2622B05700ED9420 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919AB8E2622B05700ED9420 /* SuggestionView.swift */; };
 		F919AB902622B05700ED9420 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919AB8E2622B05700ED9420 /* SuggestionView.swift */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		F9098F9F26242449005314EC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		F9098FA526242AC3005314EC /* OpeningScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningScreenView.swift; sourceTree = "<group>"; };
 		F919AB8826227FF200ED9420 /* EmotionButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButtonViewModel.swift; sourceTree = "<group>"; };
 		F919AB8E2622B05700ED9420 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		F91A9CA6261456D000893BEE /* SimpleMindfulnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMindfulnessApp.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				F9589D36261810A2004B800B /* MainScreen */,
 				F9FF80D7261696C400190D34 /* LogView.swift */,
 				F919AB8E2622B05700ED9420 /* SuggestionView.swift */,
+				F9098FA526242AC3005314EC /* OpeningScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				F9C6A7982616EA2F001418A3 /* SettingsViewModel.swift in Sources */,
 				F99F4C33261D9B8800D282B5 /* TextFieldView.swift in Sources */,
 				F9FF80D8261696C400190D34 /* LogView.swift in Sources */,
+				F9098FA626242AC3005314EC /* OpeningScreenView.swift in Sources */,
 				F9589D302617FCF6004B800B /* TitleView.swift in Sources */,
 				F9FF80C32616838100190D34 /* GreetingMessageView.swift in Sources */,
 				F9098FA026242449005314EC /* MainViewModel.swift in Sources */,

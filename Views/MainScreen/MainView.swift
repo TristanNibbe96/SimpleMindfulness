@@ -14,6 +14,10 @@ struct MainView: View {
     @State var selectedEmotion = emotionType.angry
     @State var seenPrivacyPolicy = MainViewModel().seenPrivacyPolicy()
     
+    func closeOpeningScreen(accepted: Bool){
+        seenPrivacyPolicy = true
+    }
+    
     func changeEmotion(emotion: emotionType){
         selectedEmotion = emotion
     }
@@ -36,7 +40,7 @@ struct MainView: View {
     
     var body: some View {
         if !seenPrivacyPolicy{
-            OpeningScreenView()
+            OpeningScreenView(mainView: self)
         }else if self.navBarVisible{
             NavBarView(mainView: self)
         }else if self.suggestionScreenVisible{

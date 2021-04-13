@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct OpeningScreenView: View {
-    @State private var status = false
+    @State private var accepted = false
     let privacyPolicy = OpeningScreenViewModel().getPrivacyPolicy()
+    let mainView: MainView
     
     func acceptPrivacyPolicy(){
-        
+        mainView.closeOpeningScreen(accepted: accepted)
     }
     
     var body: some View {
@@ -21,7 +22,7 @@ struct OpeningScreenView: View {
                 Text(privacyPolicy[0])
                     .multilineTextAlignment(.center)
                 HStack{
-                    Toggle(isOn: $status
+                    Toggle(isOn: $accepted
                     ,label: {
                         Text(privacyPolicy[1])
                             .multilineTextAlignment(.center)
@@ -46,6 +47,6 @@ struct OpeningScreenView: View {
 
 struct OpeningScreen_Previews: PreviewProvider {
     static var previews: some View {
-        OpeningScreenView()
+        OpeningScreenView(mainView: MainView())
     }
 }

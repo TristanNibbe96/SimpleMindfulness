@@ -20,6 +20,10 @@
 		F91A9CD2261456D200893BEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CA7261456D000893BEE /* ContentView.swift */; };
 		F91A9CD3261456D200893BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91A9CA8261456D200893BEE /* Assets.xcassets */; };
 		F91A9CD4261456D200893BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91A9CA8261456D200893BEE /* Assets.xcassets */; };
+		F945E50E262572C800ED49EB /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = F945E50D262572C800ED49EB /* PrivacyPolicy.txt */; };
+		F945E50F262572C800ED49EB /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = F945E50D262572C800ED49EB /* PrivacyPolicy.txt */; };
+		F945E5152625730B00ED49EB /* OpeningScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */; };
+		F945E5162625730B00ED49EB /* OpeningScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */; };
 		F9589D292617F7E5004B800B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MainView.swift */; };
 		F9589D2A2617F7E5004B800B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MainView.swift */; };
 		F9589D302617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
@@ -84,6 +88,8 @@
 		F91A9CC8261456D200893BEE /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91A9CCC261456D200893BEE /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		F91A9CCE261456D200893BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F945E50D262572C800ED49EB /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
+		F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningScreenViewModel.swift; sourceTree = "<group>"; };
 		F9589D282617F7E5004B800B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F9589D2F2617FCF6004B800B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		F9766934261A49AC00936D13 /* TextFieldListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldListView.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 				F91A9CA6261456D000893BEE /* SimpleMindfulnessApp.swift */,
 				F91A9CA8261456D200893BEE /* Assets.xcassets */,
 				F9966CCD2619A40200F0642B /* Suggestions.plist */,
+				F945E50D262572C800ED49EB /* PrivacyPolicy.txt */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -234,6 +241,7 @@
 				F9C6A7972616EA2F001418A3 /* SettingsViewModel.swift */,
 				F919AB8826227FF200ED9420 /* EmotionButtonViewModel.swift */,
 				F9098F9F26242449005314EC /* MainViewModel.swift */,
+				F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -374,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F945E50E262572C800ED49EB /* PrivacyPolicy.txt in Resources */,
 				F9966CCE2619A40200F0642B /* Suggestions.plist in Resources */,
 				F91A9CD3261456D200893BEE /* Assets.xcassets in Resources */,
 			);
@@ -383,6 +392,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F945E50F262572C800ED49EB /* PrivacyPolicy.txt in Resources */,
 				F9966CCF2619A40200F0642B /* Suggestions.plist in Resources */,
 				F91A9CD4261456D200893BEE /* Assets.xcassets in Resources */,
 			);
@@ -420,6 +430,7 @@
 				F9C37B9E261633B0008D7A3E /* RadialMenuView.swift in Sources */,
 				F91A9CD1261456D200893BEE /* ContentView.swift in Sources */,
 				F91A9CCF261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
+				F945E5152625730B00ED49EB /* OpeningScreenViewModel.swift in Sources */,
 				F919AB8926227FF200ED9420 /* EmotionButtonViewModel.swift in Sources */,
 				F9C6A7982616EA2F001418A3 /* SettingsViewModel.swift in Sources */,
 				F99F4C33261D9B8800D282B5 /* TextFieldView.swift in Sources */,
@@ -436,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9FF80CB2616924B00190D34 /* SettingsView.swift in Sources */,
+				F945E5162625730B00ED49EB /* OpeningScreenViewModel.swift in Sources */,
 				F9766936261A49AC00936D13 /* TextFieldListView.swift in Sources */,
 				F9C37BA626163508008D7A3E /* EmotionButtonView.swift in Sources */,
 				F99F4C34261D9B8800D282B5 /* TextFieldView.swift in Sources */,

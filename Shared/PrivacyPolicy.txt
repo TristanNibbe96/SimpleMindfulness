@@ -1,0 +1,8 @@
+//
+//  PrivacyPolicy.txt
+//  SimpleMindfulness
+//
+//  Created by Tristan Nibbe on 4/12/21.
+//
+Insert Privacy Policy Here
+

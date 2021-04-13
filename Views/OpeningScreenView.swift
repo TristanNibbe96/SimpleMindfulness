@@ -9,16 +9,38 @@ import SwiftUI
 
 struct OpeningScreenView: View {
     @State private var status = false
+    let privacyPolicy = OpeningScreenViewModel().getPrivacyPolicy()
+    
+    func acceptPrivacyPolicy(){
+        
+    }
     
     var body: some View {
-        VStack{
-            HStack{
-                Toggle(isOn: $status
+        NavigationView{
+            List{
+                Text(privacyPolicy[0])
+                    .multilineTextAlignment(.center)
+                HStack{
+                    Toggle(isOn: $status
+                    ,label: {
+                        Text(privacyPolicy[1])
+                            .multilineTextAlignment(.center)
+                    })
+                }
+                Button(action: acceptPrivacyPolicy
                 ,label: {
-                    /*@START_MENU_TOKEN@*/Text("Label")/*@END_MENU_TOKEN@*/
+                    HStack{
+                        Spacer()
+                        Text("I have read and acknowledged this policy")
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        Spacer()
+                    }
                 })
             }
+            .navigationBarTitle("Privacy Policy", displayMode: .inline)
         }
+        .navigationTitle("temo")
+        .navigationBarHidden(true)
     }
 }
 

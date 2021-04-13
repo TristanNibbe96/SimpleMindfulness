@@ -1,8 +1,4 @@
-//
-//  PrivacyPolicy.txt
-//  SimpleMindfulness
-//
-//  Created by Tristan Nibbe on 4/12/21.
-//
-Insert Privacy Policy Here
+Any and all data entered into this application will be stored locally on your device and used only for the users reference. None of the information entered into this application will be transferred to or by the developers in any way.
+----
+Would you like this application to record the date and time when a mood is recorded, this function is so that the user can track mood patterns to possibly identify reaccuring events that are causing stress or anxiety, the information gathered will not be used by the developers in any way, and will only be stored on your local device. If you change your mind at anytime this setting can be toggled in the settings menu.
 

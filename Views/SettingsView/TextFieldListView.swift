@@ -45,11 +45,11 @@ struct TextFieldListView: View {
                 Spacer()
                 Button(action: addNewSuggestions
                 ,label: {
-                    Image(systemName: "plus")
+                    Image(systemName: "plus.square")
+                        .font(.title)
                 })
                     
                 Spacer()
-                
                 Button(action: saveSuggestions
                 ,label: {
                     Text("Save Changes")
@@ -58,10 +58,11 @@ struct TextFieldListView: View {
                 
                 Button(action: deleteSuggestion
                 ,label: {
-                    Image(systemName: "minus")
+                    Image(systemName: "minus.square")
+                        .font(.title)
                 })
                 Spacer()
-            }
+            }.padding()
         }
 
     }

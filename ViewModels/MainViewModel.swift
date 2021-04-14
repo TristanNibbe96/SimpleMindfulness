@@ -2,7 +2,7 @@
 //  MainViewModel.swift
 //  SimpleMindfulness (iOS)
 //
-//  Created by user192295 on 4/11/21.
+//  Created by Tristan Nibbe on 4/11/21.
 //
 
 import Foundation
@@ -27,12 +27,17 @@ class MainViewModel: SettingsViewModel{
         return suggestionList
     }
     
-    func seenPrivacyPolicy() -> Bool{
+    func getAcceptedPrivacyPolicy() -> Bool{
         var seen = false
         
-        seen = UserDefaults.standard.bool(forKey: "seenPrivacyPolicy") 
+        seen = UserDefaults.standard.bool(forKey: "acceptedPrivacyPolicy")
 
         return seen
+    }
+    
+    func setAcceptedPrivacyPolicy(acceptedDateLogging: Bool){
+        UserDefaults.standard.set(acceptedDateLogging, forKey: "acceptedDateLogging")
+        UserDefaults.standard.set(true, forKey: "acceptedPrivacyPolicy")
     }
 }
 

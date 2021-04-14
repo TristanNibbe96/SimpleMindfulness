@@ -12,10 +12,11 @@ struct MainView: View {
     @State var navBarVisible = false
     @State var suggestionScreenVisible = false
     @State var selectedEmotion = emotionType.angry
-    @State var seenPrivacyPolicy = MainViewModel().seenPrivacyPolicy()
+    @State var seenPrivacyPolicy = MainViewModel().getAcceptedPrivacyPolicy()
     
     func closeOpeningScreen(accepted: Bool){
         seenPrivacyPolicy = true
+        viewModel.setAcceptedPrivacyPolicy(acceptedDateLogging: accepted)
     }
     
     func changeEmotion(emotion: emotionType){

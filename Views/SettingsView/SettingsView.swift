@@ -35,7 +35,8 @@ struct SettingsView: View {
             sadSuggestions = suggestions
         }
     }
-    
+    @State var showingDateLoggingInfo = true
+
     var body: some View {
         VStack{
             HStack{
@@ -44,6 +45,22 @@ struct SettingsView: View {
                 TextField("\(viewModel.getSavedName())", text: $enteredName){_ in
                 }onCommit:{viewModel.saveUserName(enteredName: enteredName)}
             }
+            .padding()
+            HStack{
+            Toggle(isOn: /*@START_MENU_TOKEN@*/.constant(true)/*@END_MENU_TOKEN@*/, label: {
+                    Text("Allow date logging. ")
+                })
+                Button(action: {showingDateLoggingInfo = true}
+                ,label: {
+                    Image(systemName: "questionmark.circle")
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                })
+                    .alert(isPresented: $showingDateLoggingInfo
+                    , content: {
+                        Alert(title: Text("Title"), message: Text("This information is for your own reference only to better track your mood cycles and patterns. The data saved will not be transmitted, stored, or used by the developers in any way."), dismissButton: .default(Text("OK")))
+                    })
+            }//HStack
             .padding()
             TabView{
                 TextFieldListView(stringList: angrySuggestions, settingsView: self,emotion: emotionType.angry)

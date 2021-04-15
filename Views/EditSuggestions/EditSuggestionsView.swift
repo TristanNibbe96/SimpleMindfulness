@@ -10,14 +10,22 @@ import SwiftUI
 
 struct EditSuggestionsView: View {
     @ObservedObject var viewModel : EditSuggestionsViewModel = EditSuggestionsViewModel()
-    @State private var enteredName: String = EditSuggestionsViewModel().getSavedName()
     @State private var currentlySelectedEmotion = emotionType.angry
     @State private var angrySuggestions: [String] = EditSuggestionsViewModel().getSuggestions().AngrySuggestions
     @State private var blehSuggestions: [String] = EditSuggestionsViewModel().getSuggestions().BlehSuggestions
     @State private var happySuggestions: [String] = EditSuggestionsViewModel().getSuggestions().HappySuggestions
     @State private var sadSuggestions: [String] = EditSuggestionsViewModel().getSuggestions().SadSuggestions
-    
 
+    
+    func refreshSuggestions(){
+        let newSuggestions = EditSuggestionsViewModel().getSuggestions()
+        currentlySelectedEmotion = emotionType.angry
+
+        angrySuggestions = newSuggestions.AngrySuggestions
+        blehSuggestions = newSuggestions.BlehSuggestions
+        happySuggestions = newSuggestions.HappySuggestions
+        sadSuggestions = newSuggestions.SadSuggestions
+    }
     
     func saveSuggestions(){
         viewModel.saveSuggestions(angry: angrySuggestions, bleh: blehSuggestions, happy: happySuggestions, sad: sadSuggestions, name: "Suggestions")
@@ -35,32 +43,9 @@ struct EditSuggestionsView: View {
             sadSuggestions = suggestions
         }
     }
-    @State var showingDateLoggingInfo = false
 
     var body: some View {
         VStack{
-            HStack{
-                Text("Name: ")
-                    .padding(.horizontal)
-                TextField("\(viewModel.getSavedName())", text: $enteredName){_ in
-                }onCommit:{viewModel.saveUserName(enteredName: enteredName)}
-            }
-            .padding()
-            HStack{
-            Toggle(isOn: /*@START_MENU_TOKEN@*/.constant(true)/*@END_MENU_TOKEN@*/, label: {
-                    Text("Allow date logging. ")
-                })
-                Button(action: {showingDateLoggingInfo = true}
-                ,label: {
-                    Image(systemName: "questionmark.circle")
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                })
-                .alert(isPresented: $showingDateLoggingInfo
-                , content: {
-                        Alert(title: Text("Title"), message: Text("This information is for your own reference only to better track your mood cycles and patterns. The data saved will not be transmitted, stored, or used by the developers in any way."), dismissButton: .default(Text("OK")))
-                })
-            }//HStack
-            .padding()
             TabView{
                 TextFieldListView(stringList: angrySuggestions, editSuggestionsView: self,emotion: emotionType.angry)
                     .tabItem {
@@ -84,23 +69,15 @@ struct EditSuggestionsView: View {
                     }
 
             }// Tabview
-            .border(Color.gray, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-            .navigationBarTitle("Settings",displayMode: .inline)
-            .navigationBarHidden(false)
         }//VStack
         .onAppear(){
-            currentlySelectedEmotion = emotionType.angry
-            let newSuggestions = EditSuggestionsViewModel().getSuggestions()
-            angrySuggestions = EditSuggestionsViewModel().getSuggestions().AngrySuggestions
-            blehSuggestions = newSuggestions.BlehSuggestions
-            happySuggestions = newSuggestions.HappySuggestions
-            sadSuggestions = newSuggestions.SadSuggestions
+            refreshSuggestions()
         }
     }
 }
 
 struct EditSuggestionsView_Preview: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        EditSuggestionsView()
     }
 }

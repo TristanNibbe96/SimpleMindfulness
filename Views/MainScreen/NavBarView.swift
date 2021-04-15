@@ -32,6 +32,22 @@ struct NavBarView: View {
                         Image(systemName: "chevron.right")
                         }
                 }//End ZStack
+                
+                ZStack{
+                    NavigationLink(
+                        destination: EditSuggestionsView(),
+                        label: {
+                            HStack{
+                                Text("Edit Suggestions")
+                                Spacer()
+                                Image(systemName: "gear")
+                            }
+                    })//end nav link
+                        HStack{
+                            Spacer()
+                        Image(systemName: "chevron.right")
+                        }
+                }//End ZStack
 
                 ZStack{
                     NavigationLink(

@@ -25,6 +25,6 @@ struct TextFieldView: View {
 
 struct TextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldView(fieldList: TextFieldListView(stringList: ["test"], settingsView: SettingsView()))
+        TextFieldView(fieldList: TextFieldListView(stringList: ["test"], editSuggestionsView: EditSuggestionsView()))
     }
 }

@@ -22,7 +22,7 @@ struct Suggestions: Codable{
     var SadSuggestions: [String] = []
 }
 
-class SettingsViewModel: ObservableObject{
+class EditSuggestionsViewModel: ObservableObject{
     private var plistURL: URL{
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         return documents.appendingPathComponent("Suggestions.plist")
@@ -68,13 +68,13 @@ class SettingsViewModel: ObservableObject{
               let suggestions = try? decoder.decode(Suggestions.self, from: data)
         else{
             //TODO sett to get and return a default value
-            return getDefaultValuesFromBundle()
+            return getDefaultSuggestionValuesFromBundle()
         }
         
         return suggestions
     }
     
-    func getDefaultValuesFromBundle() -> Suggestions{
+    func getDefaultSuggestionValuesFromBundle() -> Suggestions{
         let path = Bundle.main.path(forResource: "Suggestions", ofType:  "plist")
         let data = FileManager.default.contents(atPath: path!)
         let decoder = PropertyListDecoder()

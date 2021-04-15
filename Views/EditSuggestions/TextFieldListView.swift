@@ -9,28 +9,28 @@ import SwiftUI
 
 struct TextFieldListView: View {
     @State var stringList: [String]
-    let settingsView: SettingsView
+    let editSuggestionsView: EditSuggestionsView
     var emotion = emotionType.angry
     
     func saveSuggestions(){
 
-        settingsView.saveSuggestions()
+        editSuggestionsView.saveSuggestions()
     }
 
     func setStringAtIndex(index: Int, string: String){
         stringList[index] = string
-        settingsView.changeSuggestions(suggestionType: emotion,suggestions: stringList)
+        editSuggestionsView.changeSuggestions(suggestionType: emotion,suggestions: stringList)
     }
     
     func addNewSuggestions(){
         stringList.append("")
-        settingsView.changeSuggestions(suggestionType: emotion, suggestions: stringList)
+        editSuggestionsView.changeSuggestions(suggestionType: emotion, suggestions: stringList)
     }
     
     func deleteSuggestion(){
         if(stringList.count > 0){
             stringList.remove(at: stringList.count-1)
-            settingsView.changeSuggestions(suggestionType: emotion, suggestions: stringList)
+            editSuggestionsView.changeSuggestions(suggestionType: emotion, suggestions: stringList)
         }
     }
     
@@ -70,6 +70,6 @@ struct TextFieldListView: View {
 
 struct TextFieldListView_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldListView(stringList: ["String"], settingsView: SettingsView())
+        TextFieldListView(stringList: ["String"], editSuggestionsView: EditSuggestionsView())
     }
 }

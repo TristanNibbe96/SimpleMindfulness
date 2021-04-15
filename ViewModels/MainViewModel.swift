@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MainViewModel: SettingsViewModel{
+class MainViewModel: EditSuggestionsViewModel{
     
     
     func getSuggestionListFromSaved(emotion: emotionType)-> [String]{

@@ -28,13 +28,6 @@ class EditSuggestionsViewModel: ObservableObject{
         return documents.appendingPathComponent("Suggestions.plist")
     }
     
-    func saveUserName(enteredName: String){
-        UserDefaults.standard.set(enteredName, forKey: "name")
-    }
-    
-    func getSavedName() -> String{
-        return UserDefaults.standard.string(forKey: "name") ?? "User Name"
-    }
     
     func packageSuggestionArraysIntoObject(angry: [String], bleh: [String], happy: [String], sad: [String]) -> Suggestions{
         var suggestions = Suggestions()

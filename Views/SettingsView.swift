@@ -2,14 +2,14 @@
 //  SettingsView.swift
 //  SimpleMindfulness (iOS)
 //
-//  Created by user192295 on 4/14/21.
+//  Created by Tristan Nibbe on 4/14/21.
 //
 
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var viewModel : EditSuggestionsViewModel = EditSuggestionsViewModel()
-    @State private var enteredName: String = EditSuggestionsViewModel().getSavedName()
+    @ObservedObject var viewModel : SettingsViewModel = SettingsViewModel()
+    @State private var enteredName: String = SettingsViewModel().getSavedName()
     @State var showingDateLoggingInfo = false
 
 

@@ -30,6 +30,7 @@
 		F9589D312617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
 		F9766935261A49AC00936D13 /* TextFieldListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9766934261A49AC00936D13 /* TextFieldListView.swift */; };
 		F9766936261A49AC00936D13 /* TextFieldListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9766934261A49AC00936D13 /* TextFieldListView.swift */; };
+		F98941BA262820A800A11384 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98941B9262820A800A11384 /* SettingsViewModel.swift */; };
 		F9966CCE2619A40200F0642B /* Suggestions.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9966CCD2619A40200F0642B /* Suggestions.plist */; };
 		F9966CCF2619A40200F0642B /* Suggestions.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9966CCD2619A40200F0642B /* Suggestions.plist */; };
 		F99F4C33261D9B8800D282B5 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F4C32261D9B8800D282B5 /* TextFieldView.swift */; };
@@ -94,6 +95,7 @@
 		F9589D282617F7E5004B800B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F9589D2F2617FCF6004B800B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		F9766934261A49AC00936D13 /* TextFieldListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldListView.swift; sourceTree = "<group>"; };
+		F98941B9262820A800A11384 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		F9966CCD2619A40200F0642B /* Suggestions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Suggestions.plist; sourceTree = "<group>"; };
 		F99F4C32261D9B8800D282B5 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		F9B60D38262819D5000CA2B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				F9C6A7912616E65A001418A3 /* ContentViewModel.swift */,
 				F9C6A7972616EA2F001418A3 /* EditSuggestionsViewModel.swift */,
+				F98941B9262820A800A11384 /* SettingsViewModel.swift */,
 				F919AB8826227FF200ED9420 /* EmotionButtonViewModel.swift */,
 				F9098F9F26242449005314EC /* MainViewModel.swift */,
 				F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */,
@@ -441,6 +444,7 @@
 				F9FF80D8261696C400190D34 /* LogView.swift in Sources */,
 				F9098FA626242AC3005314EC /* OpeningScreenView.swift in Sources */,
 				F9589D302617FCF6004B800B /* TitleView.swift in Sources */,
+				F98941BA262820A800A11384 /* SettingsViewModel.swift in Sources */,
 				F9FF80C32616838100190D34 /* GreetingMessageView.swift in Sources */,
 				F9098FA026242449005314EC /* MainViewModel.swift in Sources */,
 			);

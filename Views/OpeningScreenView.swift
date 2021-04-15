@@ -40,8 +40,6 @@ struct OpeningScreenView: View {
             }
             .navigationBarTitle("Privacy Policy", displayMode: .inline)
         }
-        .navigationTitle("temo")
-        .navigationBarHidden(true)
     }
 }
 

@@ -7,13 +7,19 @@
 
 import Foundation
 
-class SettingsViewModel: ObservableObject{
+class SettingsViewModel: OpeningScreenViewModel{
     func saveUserName(enteredName: String){
         UserDefaults.standard.set(enteredName, forKey: "name")
     }
     
     func getSavedName() -> String{
         return UserDefaults.standard.string(forKey: "name") ?? "User Name"
+    }
+    
+    func getDateLoggingInfo() -> String{
+        let privacyPolicy = super.getPrivacyPolicy()
+        
+        return privacyPolicy[privacyPolicy.count-1]
     }
     
 }

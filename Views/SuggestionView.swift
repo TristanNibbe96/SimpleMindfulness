@@ -29,19 +29,18 @@ struct SuggestionView: View {
                     Image(systemName: "return")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 })
-                    .padding(.trailing)
+                .padding(.trailing)
             }
             
             Spacer()
-            HStack{
-                Spacer()
+            
+            VStack{
                 Text(suggestion[currentSuggestionIndex])
-                Spacer()
                 Button(action: iterateSuggestionIndex
                 ,label: {
-                    Image(systemName:"arrow.right")
+                    Text("Show another suggestion")
                 })
-                    .padding()
+                .padding()
             }
             Spacer()
         }

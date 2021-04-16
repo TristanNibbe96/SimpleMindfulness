@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MainViewModel: EditSuggestionsViewModel{
+class MainViewModel: SuggestionAccessors{
     
     
     func getSuggestionListFromSaved(emotion: emotionType)-> [String]{

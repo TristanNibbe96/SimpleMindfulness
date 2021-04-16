@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SuggestionView: View {
     @State var currentSuggestionIndex = 0
+    var suggestionType: emotionType = emotionType.angry
     var mainView: MainView
     var suggestion: [String]
     

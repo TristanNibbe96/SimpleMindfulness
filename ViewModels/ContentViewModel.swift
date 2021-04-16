@@ -7,9 +7,7 @@
 
 import Foundation
 
-class ContentViewModel : ObservableObject{
+class ContentViewModel : SettingsAccessors{
     
-    func getSavedName() -> String{
-        return UserDefaults.standard.string(forKey: "name") ?? "User Name"
-    }
+
 }

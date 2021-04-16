@@ -17,8 +17,8 @@ struct EditSuggestionsView: View {
     @State private var sadSuggestions: [String] = EditSuggestionsViewModel().getSuggestions().SadSuggestions
 
     
-    func refreshSuggestions(){
-        let newSuggestions = EditSuggestionsViewModel().getSuggestions()
+    init(){
+        let newSuggestions = viewModel.getSuggestions()
         currentlySelectedEmotion = emotionType.angry
 
         angrySuggestions = newSuggestions.AngrySuggestions
@@ -70,9 +70,6 @@ struct EditSuggestionsView: View {
 
             }// Tabview
         }//VStack
-        .onAppear(){
-            refreshSuggestions()
-        }
     }
 }
 

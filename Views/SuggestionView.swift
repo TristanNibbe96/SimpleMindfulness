@@ -9,10 +9,15 @@ import SwiftUI
 
 struct SuggestionView: View {
     @State var currentSuggestionIndex = 0
-    @State var suggestions: [String] = [""]
     let viewModel = SuggestionViewModel()
+    let suggestions: [String]
     var suggestionType: emotionType = emotionType.angry
     var mainView: MainView
+
+    init(mainView: MainView, suggestionType: emotionType = emotionType.angry){
+        self.suggestions = viewModel.getSuggestionListFromSaved(emotion: suggestionType)
+        self.mainView = mainView
+    }
     
     func iterateSuggestionIndex(){
         currentSuggestionIndex += 1
@@ -21,13 +26,6 @@ struct SuggestionView: View {
         }
     }
     
-    func getSuggestionList(){
-        suggestions = viewModel.getSuggestionListFromSaved(emotion: suggestionType)
-    }
-    
-    func tintImage(){
-        
-    }
     
     var body: some View {
         ZStack{
@@ -60,9 +58,6 @@ struct SuggestionView: View {
                 Spacer()
             }//VStack
         }//ZStack
-        .onAppear(){
-            getSuggestionList()
-        }
     }
 }
 

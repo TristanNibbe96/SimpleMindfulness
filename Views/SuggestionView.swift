@@ -9,15 +9,20 @@ import SwiftUI
 
 struct SuggestionView: View {
     @State var currentSuggestionIndex = 0
+    @State var suggestions: [String] = [""]
+    let viewModel = SuggestionViewModel()
     var suggestionType: emotionType = emotionType.angry
     var mainView: MainView
-    var suggestion: [String]
     
     func iterateSuggestionIndex(){
         currentSuggestionIndex += 1
-        if(currentSuggestionIndex >= suggestion.count){
+        if(currentSuggestionIndex >= suggestions.count){
             currentSuggestionIndex = 0
         }
+    }
+    
+    func getSuggestionList(){
+        suggestions = viewModel.getSuggestionListFromSaved(emotion: suggestionType)
     }
     
     var body: some View {
@@ -36,7 +41,7 @@ struct SuggestionView: View {
             Spacer()
             
             VStack{
-                Text(suggestion[currentSuggestionIndex])
+                Text(suggestions[currentSuggestionIndex])
                 Button(action: iterateSuggestionIndex
                 ,label: {
                     Text("Show another suggestion")
@@ -44,12 +49,14 @@ struct SuggestionView: View {
                 .padding()
             }
             Spacer()
+        }.onAppear(){
+            getSuggestionList()
         }
     }
 }
 
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
-        SuggestionView(mainView: MainView(), suggestion: ["1","2"])
+        SuggestionView(mainView: MainView())
     }
 }

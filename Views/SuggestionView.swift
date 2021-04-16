@@ -25,31 +25,42 @@ struct SuggestionView: View {
         suggestions = viewModel.getSuggestionListFromSaved(emotion: suggestionType)
     }
     
+    func tintImage(){
+        
+    }
+    
     var body: some View {
-        VStack{
-            HStack{
-                Spacer()
-                Button(
-                    action: mainView.toggleSuggestionScreen
-                ,label: {
-                    Image(systemName: "return")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                })
-                .padding(.trailing)
-            }
-            
-            Spacer()
-            
+        ZStack{
+            Image("Rainbow")
+                .colorMultiply(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                .saturation(0.7)
+
             VStack{
-                Text(suggestions[currentSuggestionIndex])
-                Button(action: iterateSuggestionIndex
-                ,label: {
-                    Text("Show another suggestion")
-                })
-                .padding()
-            }
-            Spacer()
-        }.onAppear(){
+                HStack{
+                    Spacer()
+                    Button(
+                        action: mainView.toggleSuggestionScreen
+                    ,label: {
+                        Image(systemName: "return")
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    })
+                    .padding(.trailing)
+                }//HStack
+                
+                Spacer()
+                
+                VStack{
+                    Text(suggestions[currentSuggestionIndex])
+                    Button(action: iterateSuggestionIndex
+                    ,label: {
+                        Text("Show another suggestion")
+                    })
+                    .padding()
+                }//VStack
+                Spacer()
+            }//VStack
+        }//ZStack
+        .onAppear(){
             getSuggestionList()
         }
     }

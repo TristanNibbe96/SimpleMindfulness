@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SuggestionView: View {
     @State var currentSuggestionIndex = 0
+    @State var currentSuggestion: String = ""
     let viewModel = SuggestionViewModel()
     let suggestions: [String]
     var suggestionType: emotionType = emotionType.angry
@@ -19,6 +20,7 @@ struct SuggestionView: View {
         self.suggestions = viewModel.getSuggestionListFromSaved(emotion: suggestionType)
         self.mainView = mainView
         backgroundColor = .blue
+        self.currentSuggestion = suggestions[0]
     }
     
     func iterateSuggestionIndex(){
@@ -26,8 +28,16 @@ struct SuggestionView: View {
         if(currentSuggestionIndex >= suggestions.count){
             currentSuggestionIndex = 0
         }
+        currentSuggestion = suggestions[currentSuggestionIndex]
     }
     
+    var scaledWidth: CGFloat{
+        return UIScreen.main.bounds.width;
+    }
+    
+    var scaledHeight: CGFloat{
+        return UIScreen.main.bounds.height;
+    }
     
     var body: some View {
         ZStack{
@@ -43,19 +53,22 @@ struct SuggestionView: View {
                     ,label: {
                         Image(systemName: "return")
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(.black)
                     })
                     .padding(.trailing)
                 }//HStack
-                
                 Spacer()
-                
-                VStack{
-                    Text(suggestions[currentSuggestionIndex])
-                    NextSuggestionButtonView(item: iterateSuggestionIndex)
-                }//VStack
+                SuggestionTextView(backgroundColor: backgroundColor, suggestion:currentSuggestion)
+                Spacer()
+                Spacer()
+                NextSuggestionButtonView(item: iterateSuggestionIndex)
                 Spacer()
             }//VStack
+            .frame(width: scaledWidth, height: scaledHeight)
         }//ZStack
+        .onAppear(){
+            currentSuggestion = suggestions[currentSuggestionIndex]
+        }
     }
 }
 

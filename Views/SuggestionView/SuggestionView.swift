@@ -13,10 +13,12 @@ struct SuggestionView: View {
     let suggestions: [String]
     var suggestionType: emotionType = emotionType.angry
     var mainView: MainView
+    var backgroundColor: Color
 
     init(mainView: MainView, suggestionType: emotionType = emotionType.angry){
         self.suggestions = viewModel.getSuggestionListFromSaved(emotion: suggestionType)
         self.mainView = mainView
+        backgroundColor = .blue
     }
     
     func iterateSuggestionIndex(){
@@ -30,8 +32,8 @@ struct SuggestionView: View {
     var body: some View {
         ZStack{
             Image("Rainbow")
-                .colorMultiply(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                .saturation(0.7)
+                .colorMultiply(backgroundColor)
+                .saturation(2.0)
 
             VStack{
                 HStack{
@@ -49,11 +51,7 @@ struct SuggestionView: View {
                 
                 VStack{
                     Text(suggestions[currentSuggestionIndex])
-                    Button(action: iterateSuggestionIndex
-                    ,label: {
-                        Text("Show another suggestion")
-                    })
-                    .padding()
+                    NextSuggestionButtonView(item: iterateSuggestionIndex)
                 }//VStack
                 Spacer()
             }//VStack

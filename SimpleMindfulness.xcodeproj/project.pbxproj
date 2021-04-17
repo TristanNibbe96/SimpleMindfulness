@@ -30,6 +30,10 @@
 		F9589D312617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
 		F9766935261A49AC00936D13 /* TextFieldListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9766934261A49AC00936D13 /* TextFieldListView.swift */; };
 		F9766936261A49AC00936D13 /* TextFieldListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9766934261A49AC00936D13 /* TextFieldListView.swift */; };
+		F9774A30262A700D00602E54 /* SuggestionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9774A2F262A700D00602E54 /* SuggestionTextView.swift */; };
+		F9774A31262A700D00602E54 /* SuggestionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9774A2F262A700D00602E54 /* SuggestionTextView.swift */; };
+		F9774A3B262A70C000602E54 /* NextSuggestionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9774A3A262A70C000602E54 /* NextSuggestionButtonView.swift */; };
+		F9774A3C262A70C000602E54 /* NextSuggestionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9774A3A262A70C000602E54 /* NextSuggestionButtonView.swift */; };
 		F97B313E26292BF40055847C /* SuggestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B313D26292BF40055847C /* SuggestionViewModel.swift */; };
 		F97B3144262932B40055847C /* SuggestionAccessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B3143262932B40055847C /* SuggestionAccessors.swift */; };
 		F97B314B2629332F0055847C /* SettingsAccessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B314A2629332F0055847C /* SettingsAccessors.swift */; };
@@ -99,6 +103,8 @@
 		F9589D282617F7E5004B800B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F9589D2F2617FCF6004B800B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		F9766934261A49AC00936D13 /* TextFieldListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldListView.swift; sourceTree = "<group>"; };
+		F9774A2F262A700D00602E54 /* SuggestionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTextView.swift; sourceTree = "<group>"; };
+		F9774A3A262A70C000602E54 /* NextSuggestionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextSuggestionButtonView.swift; sourceTree = "<group>"; };
 		F97B313D26292BF40055847C /* SuggestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewModel.swift; sourceTree = "<group>"; };
 		F97B3143262932B40055847C /* SuggestionAccessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionAccessors.swift; sourceTree = "<group>"; };
 		F97B314A2629332F0055847C /* SettingsAccessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAccessors.swift; sourceTree = "<group>"; };
@@ -247,6 +253,16 @@
 			path = MainScreen;
 			sourceTree = "<group>";
 		};
+		F9774A2E262A6FE400602E54 /* SuggestionView */ = {
+			isa = PBXGroup;
+			children = (
+				F919AB8E2622B05700ED9420 /* SuggestionView.swift */,
+				F9774A2F262A700D00602E54 /* SuggestionTextView.swift */,
+				F9774A3A262A70C000602E54 /* NextSuggestionButtonView.swift */,
+			);
+			path = SuggestionView;
+			sourceTree = "<group>";
+		};
 		F97B3149262932FC0055847C /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,10 +298,10 @@
 		F9FF80B92616820600190D34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F9774A2E262A6FE400602E54 /* SuggestionView */,
 				F919AB8326227C8B00ED9420 /* EditSuggestions */,
 				F9589D36261810A2004B800B /* MainScreen */,
 				F9FF80D7261696C400190D34 /* LogView.swift */,
-				F919AB8E2622B05700ED9420 /* SuggestionView.swift */,
 				F9098FA526242AC3005314EC /* OpeningScreenView.swift */,
 				F9B60D38262819D5000CA2B8 /* SettingsView.swift */,
 			);
@@ -456,6 +472,7 @@
 				F97B314B2629332F0055847C /* SettingsAccessors.swift in Sources */,
 				F9B60D39262819D5000CA2B8 /* SettingsView.swift in Sources */,
 				F97B313E26292BF40055847C /* SuggestionViewModel.swift in Sources */,
+				F9774A3B262A70C000602E54 /* NextSuggestionButtonView.swift in Sources */,
 				F97B3144262932B40055847C /* SuggestionAccessors.swift in Sources */,
 				F9FF80CA2616924B00190D34 /* EditSuggestionsView.swift in Sources */,
 				F9589D292617F7E5004B800B /* MainView.swift in Sources */,
@@ -470,6 +487,7 @@
 				F91A9CCF261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
 				F945E5152625730B00ED49EB /* OpeningScreenViewModel.swift in Sources */,
 				F919AB8926227FF200ED9420 /* EmotionButtonViewModel.swift in Sources */,
+				F9774A30262A700D00602E54 /* SuggestionTextView.swift in Sources */,
 				F9C6A7982616EA2F001418A3 /* EditSuggestionsViewModel.swift in Sources */,
 				F99F4C33261D9B8800D282B5 /* TextFieldView.swift in Sources */,
 				F9FF80D8261696C400190D34 /* LogView.swift in Sources */,
@@ -497,7 +515,9 @@
 				F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */,
 				F919AB902622B05700ED9420 /* SuggestionView.swift in Sources */,
 				F91A9CD2261456D200893BEE /* ContentView.swift in Sources */,
+				F9774A31262A700D00602E54 /* SuggestionTextView.swift in Sources */,
 				F91A9CD0261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
+				F9774A3C262A70C000602E54 /* NextSuggestionButtonView.swift in Sources */,
 				F9589D312617FCF6004B800B /* TitleView.swift in Sources */,
 				F9FF80D9261696C400190D34 /* LogView.swift in Sources */,
 				F9FF80C42616838100190D34 /* GreetingMessageView.swift in Sources */,

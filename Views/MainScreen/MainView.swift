@@ -45,7 +45,7 @@ struct MainView: View {
         }else if self.navBarVisible{
             NavBarView(mainView: self)
         }else if self.suggestionScreenVisible{
-            SuggestionView(mainView: self, suggestionType: selectedEmotion)
+            SuggestionView(mainView: self, suggestionType: selectedEmotion, screenVisible: $suggestionScreenVisible)
         }else {
             ContentView(mainView: self)
         }

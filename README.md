@@ -12,11 +12,12 @@ This application was coded in Swift, the front end was developed using SwiftUI. 
 
 <h2> Current Application Status </h2>
 
+- [X] Designed and implemented frontend of the main view, suggestion view, and settings view
 - [X] Added ability for user to store and retrieve their own custom suggestions using PLists
 - [X] Users can now log emotions after which the application will present saved suggestions for them
 - [X] Users can opt out of data logging in order to use the app solely as a way to store suggestions and retrieve suggestions
 - [X] Added privacy policy and users ability to view and accept privacy policy
-- [X] Full settings screen where the user can remove acceptance of privacy policy as well as enter basic user information
+- [X] added settings screen where the user can remove acceptance of privacy policy as well as enter basic user information
 - [ ] Add ability for the user to review Date and Times of logged emotions
 - [ ] Add ability for user to rate how much a particular suggestion helped them
 - [ ] Add ability for user to review a log of how much particular suggestions have helped them

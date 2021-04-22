@@ -12,8 +12,8 @@ struct TextFieldListView: View {
     var viewModel: EditSuggestionsViewModel
  
     
-    func delete(at Offsets: IndexSet){
-        
+    func delete(offsets: IndexSet){
+        viewModel.deleteSuggestion(emotion:emotion, at: offsets)
     }
     
     func addNewSuggestion(){

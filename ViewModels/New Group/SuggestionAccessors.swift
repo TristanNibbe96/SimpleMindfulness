@@ -62,6 +62,10 @@ class SuggestionAccessors: ObservableObject{
         }
     }
     
+    func deleteSuggestion(emotion: emotionType, at offsets: IndexSet){
+        angrySuggestions.remove(atOffsets: offsets)
+    }
+    
     
     func getSuggestions() -> Suggestions{
         let decoder = PropertyListDecoder()

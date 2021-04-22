@@ -22,6 +22,21 @@ class SuggestionAccessors: ObservableObject{
         return documents.appendingPathComponent("Suggestions.plist")
     }
     
+    @Published var angrySuggestions: [String] = []
+    @Published var blehSuggestions: [String] = []
+    @Published var happySuggestions: [String] = []
+    @Published var sadSuggestions: [String] = []
+
+    
+    init(){
+        let suggestions = getSuggestions()
+        
+        angrySuggestions = suggestions.AngrySuggestions
+        blehSuggestions = suggestions.BlehSuggestions
+        happySuggestions = suggestions.HappySuggestions
+        sadSuggestions = suggestions.SadSuggestions
+    }
+    
     
     func packageSuggestionArraysIntoObject(angry: [String], bleh: [String], happy: [String], sad: [String]) -> Suggestions{
         var suggestions = Suggestions()
@@ -69,6 +84,23 @@ class SuggestionAccessors: ObservableObject{
         let rawSuggestions = try! decoder.decode(Suggestions.self, from: data!)
         
         return rawSuggestions
+    }
+    
+    func getSuggestionList(emotion: emotionType)-> [String]{
+        var suggestionList = ["1","2"]
+        
+        switch emotion {
+        case emotionType.angry:
+            suggestionList = angrySuggestions
+        case emotionType.bleh:
+            suggestionList = blehSuggestions
+        case emotionType.happy:
+            suggestionList = happySuggestions
+        case emotionType.sad:
+            suggestionList = sadSuggestions
+        }
+        
+        return suggestionList
     }
 }
 

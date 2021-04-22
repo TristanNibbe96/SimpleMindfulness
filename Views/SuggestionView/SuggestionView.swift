@@ -18,7 +18,7 @@ struct SuggestionView: View {
     var backgroundColor: Color
 
     init(mainView: MainView, suggestionType: emotionType = emotionType.angry, screenVisible: Binding<Bool>){
-        self.suggestions = viewModel.getSuggestionListFromSaved(emotion: suggestionType)
+        self.suggestions = viewModel.getSuggestionList(emotion: suggestionType)
         self.mainView = mainView
         backgroundColor = .blue
         self.suggestionScreenVisible = screenVisible

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TextFieldListView: View {
+    @State var newSuggestion: String = ""
     var emotion = emotionType.angry
     var viewModel: EditSuggestionsViewModel
  
@@ -17,7 +18,7 @@ struct TextFieldListView: View {
     }
     
     func addNewSuggestion(){
-        
+        viewModel.appendSuggestion(emotion: emotion, suggestion: newSuggestion)
     }
     
     var body: some View {
@@ -29,6 +30,7 @@ struct TextFieldListView: View {
                 .onDelete(perform: delete)
             }
             HStack{
+                TextField("Enter New Suggestion Here", text: $newSuggestion)
                 Spacer()
                 Button(action: addNewSuggestion
                 ,label: {

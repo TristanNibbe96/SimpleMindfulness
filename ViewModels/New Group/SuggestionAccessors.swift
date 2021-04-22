@@ -38,7 +38,7 @@ class SuggestionAccessors: ObservableObject{
     }
     
     
-    func packageSuggestionArraysIntoObject(angry: [String], bleh: [String], happy: [String], sad: [String]) -> Suggestions{
+    private func packageSuggestionArraysIntoObject(angry: [String], bleh: [String], happy: [String], sad: [String]) -> Suggestions{
         var suggestions = Suggestions()
         suggestions.AngrySuggestions = angry
         suggestions.BlehSuggestions = bleh
@@ -47,9 +47,9 @@ class SuggestionAccessors: ObservableObject{
         
         return suggestions
     }
-        
-    func saveSuggestions(angry: [String], bleh: [String], happy: [String], sad: [String], name: String){
-        let suggestions = packageSuggestionArraysIntoObject(angry: angry, bleh: bleh, happy: happy, sad: sad)
+    
+    private func saveSuggestions(){
+        let suggestions = packageSuggestionArraysIntoObject(angry: angrySuggestions, bleh: blehSuggestions, happy: happySuggestions, sad: sadSuggestions)
         let encoder =  PropertyListEncoder()
         encoder.outputFormat = .xml
         
@@ -62,12 +62,36 @@ class SuggestionAccessors: ObservableObject{
         }
     }
     
+    func appendSuggestion(emotion: emotionType, suggestion: String){
+        switch emotion {
+            case .angry:
+                angrySuggestions.append(suggestion)
+            case .bleh:
+                blehSuggestions.append(suggestion)
+            case .happy:
+                happySuggestions.append(suggestion)
+            case .sad:
+                sadSuggestions.append(suggestion)
+        }
+        saveSuggestions()
+    }
+    
     func deleteSuggestion(emotion: emotionType, at offsets: IndexSet){
-        angrySuggestions.remove(atOffsets: offsets)
+        switch emotion {
+            case .angry:
+                angrySuggestions.remove(atOffsets: offsets)
+            case .bleh:
+                blehSuggestions.remove(atOffsets: offsets)
+            case .happy:
+                happySuggestions.remove(atOffsets: offsets)
+            case .sad:
+                sadSuggestions.remove(atOffsets: offsets)
+        }
+        saveSuggestions()
     }
     
     
-    func getSuggestions() -> Suggestions{
+    private func getSuggestions() -> Suggestions{
         let decoder = PropertyListDecoder()
         
         guard let data = try? Data.init(contentsOf: plistURL),

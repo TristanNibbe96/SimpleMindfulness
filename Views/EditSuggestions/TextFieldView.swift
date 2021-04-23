@@ -12,7 +12,6 @@ struct TextFieldView: View {
     
     var body: some View {
         TextField(text, text: $text)
-            
     }
 }
 

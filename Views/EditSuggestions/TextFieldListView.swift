@@ -10,7 +10,7 @@ import SwiftUI
 struct TextFieldListView: View {
     @State var newSuggestion: String = ""
     var emotion = emotionType.angry
-    var viewModel: EditSuggestionsViewModel
+    @ObservedObject var viewModel: EditSuggestionsViewModel
  
     
     func delete(offsets: IndexSet){
@@ -19,6 +19,7 @@ struct TextFieldListView: View {
     
     func addNewSuggestion(){
         viewModel.appendSuggestion(emotion: emotion, suggestion: newSuggestion)
+        newSuggestion = ""
     }
     
     var body: some View {
@@ -37,9 +38,7 @@ struct TextFieldListView: View {
                     Image(systemName: "plus.square")
                         .font(.title)
                 })
-                    
-                
-
+                .disabled(newSuggestion.isEmpty)
             }.padding()
         }
 

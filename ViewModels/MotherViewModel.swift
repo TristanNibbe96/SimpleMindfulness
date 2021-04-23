@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum currentSelectedScreen: Int {
+enum screenType: Int {
      case privacyPolicy = 0
      case main = 1
      case navbar = 2
@@ -16,7 +16,11 @@ enum currentSelectedScreen: Int {
 
 class MotherViewModel: SuggestionAccessors{
     @Published var acceptedPrivacyPolicy: Bool = false
-    @Published var currentScreen: currentSelectedScreen = currentSelectedScreen.privacyPolicy
+    @Published var currentScreen: screenType = screenType.privacyPolicy
+    
+    func setCurrentScreen(screen: screenType){
+        currentScreen = screen
+    }
     
     override init(){
         super.init()

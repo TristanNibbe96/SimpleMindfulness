@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct PrivacyPolicyView: View {
+    @EnvironmentObject var viewModel : MotherViewModel
     @State private var accepted = false
     let privacyPolicy = OpeningScreenViewModel().getPrivacyPolicy()
     let motherView: MotherView
     
     func acceptPrivacyPolicy(){
-        motherView.closeOpeningScreen(accepted: accepted)
+        viewModel.setCurrentScreen(screen: screenType.main)
     }
     
     var body: some View {

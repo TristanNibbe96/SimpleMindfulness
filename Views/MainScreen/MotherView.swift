@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MotherView: View {
-    @ObservedObject var viewModel = MotherViewModel()
+    @EnvironmentObject var viewModel : MotherViewModel
     @State var navBarVisible = false
     @State var suggestionScreenVisible = false
     @State var selectedEmotion = emotionType.angry

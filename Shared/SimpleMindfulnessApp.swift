@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SimpleMindfulnessApp: App {
+    @StateObject var motherViewModel = MotherViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            MotherView()
+            MotherView().environmentObject(motherViewModel)
         }
         
     }    

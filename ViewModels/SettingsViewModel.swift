@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SettingsViewModel: OpeningScreenViewModel{
+class SettingsViewModel: PrivacyPolicyViewModel{
 
     func getDateLoggingInfo() -> String{
         let privacyPolicy = getPrivacyPolicy()

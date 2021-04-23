@@ -16,7 +16,6 @@ struct EmotionButtonView: View {
     
     func logEmotion(){
         viewModel.logEmotion(emotion: emotion)
-        radialMenu.motherView.changeEmotion(emotion: emotion)
         radialMenu.closeRadialMenuAndOpenSuggestion(openSuggestion: true)
     }
         
@@ -49,6 +48,6 @@ struct EmotionButtonView: View {
 
 struct EmotionButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        EmotionButtonView(radialMenu: RadialMenuButtonView(motherView: MotherView()))
+        EmotionButtonView(radialMenu: RadialMenuButtonView())
     }
 }

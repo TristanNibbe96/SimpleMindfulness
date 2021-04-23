@@ -7,6 +7,6 @@
 
 import Foundation
 
-class OpeningScreenViewModel: SettingsAccessors{
+class PrivacyPolicyViewModel: SettingsAccessors{
 
 }

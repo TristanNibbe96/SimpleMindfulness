@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RadialMenuButtonView: View {
     @State var radialMenuOpen = false
-    var motherView: MotherView
+    @EnvironmentObject var motherViewModel: MotherViewModel
     
     func openRadialMenu(){
         radialMenuOpen = true
@@ -18,7 +18,7 @@ struct RadialMenuButtonView: View {
     func closeRadialMenuAndOpenSuggestion(openSuggestion: Bool){
         radialMenuOpen = false
         if(openSuggestion){
-            motherView.toggleSuggestionScreen()
+            motherViewModel.setCurrentScreen(screen: screenType.suggestion)
         }
     }
     
@@ -44,6 +44,6 @@ struct RadialMenuButtonView: View {
 
 struct RadialMenuButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        RadialMenuButtonView(motherView: MotherView())
+        RadialMenuButtonView().environmentObject(MotherViewModel())
     }
 }

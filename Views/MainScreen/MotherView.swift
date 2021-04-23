@@ -13,39 +13,24 @@ struct MotherView: View {
     @State var suggestionScreenVisible = false
     @State var selectedEmotion = emotionType.angry
     
-    func closeOpeningScreen(accepted: Bool){
-        viewModel.setAcceptedPrivacyPolicy(acceptedDateLogging: accepted)
-    }
-    
-    func changeEmotion(emotion: emotionType){
-        selectedEmotion = emotion
-    }
-    
-    func toggleNavBar(){
-        navBarVisible.toggle()
-    }
-    
-    func toggleSuggestionScreen(){
-        suggestionScreenVisible.toggle()
-    }
     
     var body: some View {
         
         switch viewModel.currentScreen {
             case .privacyPolicy:
-                PrivacyPolicyView(motherView: self)
+                PrivacyPolicyView()
             case .navbar:
-                NavBarView(motherView: self)
+                NavBarView()
             case .suggestion:
                 SuggestionView(motherView: self)
             case .main:
-                MainView(motherView: self)
+                MainView()
         }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MotherView()
+        MotherView().environmentObject(MotherViewModel())
     }
 }

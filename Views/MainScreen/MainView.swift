@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct MainView: View {
-    var motherView: MotherView
+    @EnvironmentObject var motherViewModel: MotherViewModel
     
     func toggleNavBar(){
-        motherView.toggleNavBar()
+        motherViewModel.setCurrentScreen(screen: screenType.navbar)
     }
     
     var scaledWidth: CGFloat{
@@ -30,13 +30,13 @@ struct MainView: View {
                     
                     VStack{
                         Divider()
-                        TitleView(mainView: self)
+                        TitleView()
                         Divider()
                     }
                     GreetingMessageView()
                     Spacer()
                     Spacer()
-                    RadialMenuButtonView(motherView: motherView)
+                    RadialMenuButtonView()
                     Spacer()
                 }//VStack end
                 .frame(width: scaledWidth, height: scaledHeight)
@@ -46,6 +46,6 @@ struct MainView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(motherView: MotherView())
+        MainView().environmentObject(MotherViewModel())
     }
 }

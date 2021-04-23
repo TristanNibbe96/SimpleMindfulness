@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct PrivacyPolicyView: View {
-    @EnvironmentObject var viewModel : MotherViewModel
+    @EnvironmentObject var motherViewModel : MotherViewModel
     @State private var accepted = false
-    let privacyPolicy = OpeningScreenViewModel().getPrivacyPolicy()
-    let motherView: MotherView
+    let privacyPolicy = PrivacyPolicyViewModel().getPrivacyPolicy()
     
     func acceptPrivacyPolicy(){
-        viewModel.setCurrentScreen(screen: screenType.main)
+        motherViewModel.setCurrentScreen(screen: screenType.main)
     }
     
     var body: some View {
@@ -46,6 +45,6 @@ struct PrivacyPolicyView: View {
 
 struct OpeningScreen_Previews: PreviewProvider {
     static var previews: some View {
-        PrivacyPolicyView(motherView: MotherView())
+        PrivacyPolicyView().environmentObject(MotherViewModel())
     }
 }

@@ -7,7 +7,21 @@
 
 import Foundation
 
-class MainViewModel: SuggestionAccessors{
+enum currentSelectedScreen: Int {
+     case privacyPolicy = 0
+     case main = 1
+     case navbar = 2
+     case suggestion = 3
+}
+
+class MotherViewModel: SuggestionAccessors{
+    @Published var acceptedPrivacyPolicy: Bool = false
+    @Published var currentScreen: currentSelectedScreen = currentSelectedScreen.privacyPolicy
+    
+    override init(){
+        super.init()
+        acceptedPrivacyPolicy = getAcceptedPrivacyPolicy()
+    }
     
     func getAcceptedPrivacyPolicy() -> Bool{
         var seen = false

@@ -1,34 +1,17 @@
 //
-//  MainView.swift
-//  SimpleMindfulness
+//  ContentView.swift
+//  Shared
 //
-//  Created by Tristan Nibbe on 4/2/21.
+//  Created by Tristan Nibbe on 3/31/21.
 //
 
 import SwiftUI
 
 struct MainView: View {
-    let viewModel = MainViewModel()
-    @State var navBarVisible = false
-    @State var suggestionScreenVisible = false
-    @State var selectedEmotion = emotionType.angry
-    @State var seenPrivacyPolicy = MainViewModel().getAcceptedPrivacyPolicy()
-    
-    func closeOpeningScreen(accepted: Bool){
-        seenPrivacyPolicy = true
-        viewModel.setAcceptedPrivacyPolicy(acceptedDateLogging: accepted)
-    }
-    
-    func changeEmotion(emotion: emotionType){
-        selectedEmotion = emotion
-    }
+    var motherView: MotherView
     
     func toggleNavBar(){
-        navBarVisible.toggle()
-    }
-    
-    func toggleSuggestionScreen(){
-        suggestionScreenVisible.toggle()
+        motherView.toggleNavBar()
     }
     
     var scaledWidth: CGFloat{
@@ -40,20 +23,29 @@ struct MainView: View {
     }
     
     var body: some View {
-        if !seenPrivacyPolicy{
-            OpeningScreenView(mainView: self)
-        }else if self.navBarVisible{
-            NavBarView(mainView: self)
-        }else if self.suggestionScreenVisible{
-            SuggestionView(mainView: self, suggestionType: selectedEmotion, screenVisible: $suggestionScreenVisible)
-        }else {
-            ContentView(mainView: self)
-        }
+        ZStack {
+            Image("Rainbow")
+                .ignoresSafeArea()
+                VStack(){
+                    
+                    VStack{
+                        Divider()
+                        TitleView(mainView: self)
+                        Divider()
+                    }
+                    GreetingMessageView()
+                    Spacer()
+                    Spacer()
+                    RadialMenuButtonView(motherView: motherView)
+                    Spacer()
+                }//VStack end
+                .frame(width: scaledWidth, height: scaledHeight)
+        }//ZStack end
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(motherView: MotherView())
     }
 }

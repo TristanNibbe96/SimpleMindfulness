@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct OpeningScreenView: View {
+struct PrivacyPolicyView: View {
     @State private var accepted = false
     let privacyPolicy = OpeningScreenViewModel().getPrivacyPolicy()
-    let mainView: MainView
+    let motherView: MotherView
     
     func acceptPrivacyPolicy(){
-        mainView.closeOpeningScreen(accepted: accepted)
+        motherView.closeOpeningScreen(accepted: accepted)
     }
     
     var body: some View {
@@ -45,6 +45,6 @@ struct OpeningScreenView: View {
 
 struct OpeningScreen_Previews: PreviewProvider {
     static var previews: some View {
-        OpeningScreenView(mainView: MainView())
+        PrivacyPolicyView(motherView: MotherView())
     }
 }

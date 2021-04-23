@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SuggestionViewModel: EditSuggestionsViewModel{
+class SuggestionViewModel: SuggestionAccessors{
 
     
 }

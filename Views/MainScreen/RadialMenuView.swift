@@ -47,6 +47,6 @@ struct RadialMenuView: View {
 
 struct RadialMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        RadialMenuView(radialMenuButton: RadialMenuButtonView(mainView: MainView()))
+        RadialMenuView(radialMenuButton: RadialMenuButtonView(motherView: MotherView()))
     }
 }

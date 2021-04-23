@@ -38,18 +38,18 @@ class SuggestionAccessors: ObservableObject{
     }
     
     
-    private func packageSuggestionArraysIntoObject(angry: [String], bleh: [String], happy: [String], sad: [String]) -> Suggestions{
+    private func packageSuggestionArraysIntoObject() -> Suggestions{
         var suggestions = Suggestions()
-        suggestions.AngrySuggestions = angry
-        suggestions.BlehSuggestions = bleh
-        suggestions.HappySuggestions = happy
-        suggestions.SadSuggestions = sad
+        suggestions.AngrySuggestions = angrySuggestions
+        suggestions.BlehSuggestions = blehSuggestions
+        suggestions.HappySuggestions = happySuggestions
+        suggestions.SadSuggestions = sadSuggestions
         
         return suggestions
     }
     
-    private func saveSuggestions(){
-        let suggestions = packageSuggestionArraysIntoObject(angry: angrySuggestions, bleh: blehSuggestions, happy: happySuggestions, sad: sadSuggestions)
+    func saveSuggestions(){
+        let suggestions = packageSuggestionArraysIntoObject()
         let encoder =  PropertyListEncoder()
         encoder.outputFormat = .xml
         
@@ -60,34 +60,6 @@ class SuggestionAccessors: ObservableObject{
                 FileManager.default.createFile(atPath: plistURL.path, contents: data, attributes: nil)
             }
         }
-    }
-    
-    func appendSuggestion(emotion: emotionType, suggestion: String){
-        switch emotion {
-            case .angry:
-                angrySuggestions.append(suggestion)
-            case .bleh:
-                blehSuggestions.append(suggestion)
-            case .happy:
-                happySuggestions.append(suggestion)
-            case .sad:
-                sadSuggestions.append(suggestion)
-        }
-        saveSuggestions()
-    }
-    
-    func deleteSuggestion(emotion: emotionType, at offsets: IndexSet){
-        switch emotion {
-            case .angry:
-                angrySuggestions.remove(atOffsets: offsets)
-            case .bleh:
-                blehSuggestions.remove(atOffsets: offsets)
-            case .happy:
-                happySuggestions.remove(atOffsets: offsets)
-            case .sad:
-                sadSuggestions.remove(atOffsets: offsets)
-        }
-        saveSuggestions()
     }
     
     

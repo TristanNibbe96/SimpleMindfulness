@@ -10,18 +10,16 @@ import SwiftUI
 struct SuggestionView: View {
     @State var currentSuggestionIndex = 0
     @State var currentSuggestion: String = ""
-    var suggestionScreenVisible: Binding<Bool>
     let viewModel = SuggestionViewModel()
     let suggestions: [String]
     var suggestionType: emotionType = emotionType.angry
-    var mainView: MainView
+    var motherView: MotherView
     var backgroundColor: Color
 
-    init(mainView: MainView, suggestionType: emotionType = emotionType.angry, screenVisible: Binding<Bool>){
+    init(motherView: MotherView, suggestionType: emotionType = emotionType.angry){
         self.suggestions = viewModel.getSuggestionList(emotion: suggestionType)
-        self.mainView = mainView
+        self.motherView = motherView
         backgroundColor = .blue
-        self.suggestionScreenVisible = screenVisible
     }
     
     func iterateSuggestionIndex(){
@@ -33,7 +31,7 @@ struct SuggestionView: View {
     }
     
     func toggleSuggestionScreen(){
-        suggestionScreenVisible.wrappedValue.toggle()
+        //suggestionScreenVisible.wrappedValue.toggle()
     }
     
     var scaledWidth: CGFloat{

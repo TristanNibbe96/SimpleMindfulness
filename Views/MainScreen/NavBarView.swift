@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct NavBarView: View {
-    var mainView: MainView
+    var motherView: MotherView
     
     func toggleNavBar(){
-        mainView.toggleNavBar()
+        motherView.toggleNavBar()
     }
     
     var body: some View {
@@ -84,6 +84,6 @@ struct NavBarView: View {
 
 struct NavBarView_Previews: PreviewProvider {
     static var previews: some View {
-        NavBarView(mainView: MainView())
+        NavBarView(motherView: MotherView())
     }
 }

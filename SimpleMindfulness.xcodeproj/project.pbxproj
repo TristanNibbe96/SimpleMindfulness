@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F9098FA026242449005314EC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9098F9F26242449005314EC /* MainViewModel.swift */; };
-		F9098FA626242AC3005314EC /* OpeningScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9098FA526242AC3005314EC /* OpeningScreenView.swift */; };
+		F9098FA026242449005314EC /* MotherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9098F9F26242449005314EC /* MotherViewModel.swift */; };
+		F9098FA626242AC3005314EC /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9098FA526242AC3005314EC /* PrivacyPolicyView.swift */; };
 		F919AB8926227FF200ED9420 /* EmotionButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919AB8826227FF200ED9420 /* EmotionButtonViewModel.swift */; };
 		F919AB8F2622B05700ED9420 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919AB8E2622B05700ED9420 /* SuggestionView.swift */; };
 		F919AB902622B05700ED9420 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919AB8E2622B05700ED9420 /* SuggestionView.swift */; };
@@ -16,16 +16,16 @@
 		F91A9CCD261456D200893BEE /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CCC261456D200893BEE /* Tests_macOS.swift */; };
 		F91A9CCF261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CA6261456D000893BEE /* SimpleMindfulnessApp.swift */; };
 		F91A9CD0261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CA6261456D000893BEE /* SimpleMindfulnessApp.swift */; };
-		F91A9CD1261456D200893BEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CA7261456D000893BEE /* ContentView.swift */; };
-		F91A9CD2261456D200893BEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CA7261456D000893BEE /* ContentView.swift */; };
+		F91A9CD1261456D200893BEE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CA7261456D000893BEE /* MainView.swift */; };
+		F91A9CD2261456D200893BEE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A9CA7261456D000893BEE /* MainView.swift */; };
 		F91A9CD3261456D200893BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91A9CA8261456D200893BEE /* Assets.xcassets */; };
 		F91A9CD4261456D200893BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91A9CA8261456D200893BEE /* Assets.xcassets */; };
 		F945E50E262572C800ED49EB /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = F945E50D262572C800ED49EB /* PrivacyPolicy.txt */; };
 		F945E50F262572C800ED49EB /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = F945E50D262572C800ED49EB /* PrivacyPolicy.txt */; };
 		F945E5152625730B00ED49EB /* OpeningScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */; };
 		F945E5162625730B00ED49EB /* OpeningScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */; };
-		F9589D292617F7E5004B800B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MainView.swift */; };
-		F9589D2A2617F7E5004B800B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MainView.swift */; };
+		F9589D292617F7E5004B800B /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MotherView.swift */; };
+		F9589D2A2617F7E5004B800B /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MotherView.swift */; };
 		F9589D302617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
 		F9589D312617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
 		F9766935261A49AC00936D13 /* TextFieldListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9766934261A49AC00936D13 /* TextFieldListView.swift */; };
@@ -80,12 +80,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F9098F9F26242449005314EC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		F9098FA526242AC3005314EC /* OpeningScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningScreenView.swift; sourceTree = "<group>"; };
+		F9098F9F26242449005314EC /* MotherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherViewModel.swift; sourceTree = "<group>"; };
+		F9098FA526242AC3005314EC /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		F919AB8826227FF200ED9420 /* EmotionButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButtonViewModel.swift; sourceTree = "<group>"; };
 		F919AB8E2622B05700ED9420 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		F91A9CA6261456D000893BEE /* SimpleMindfulnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMindfulnessApp.swift; sourceTree = "<group>"; };
-		F91A9CA7261456D000893BEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F91A9CA7261456D000893BEE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F91A9CA8261456D200893BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F91A9CAD261456D200893BEE /* SimpleMindfulness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMindfulness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91A9CB0261456D200893BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		F91A9CCE261456D200893BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F945E50D262572C800ED49EB /* PrivacyPolicy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
 		F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningScreenViewModel.swift; sourceTree = "<group>"; };
-		F9589D282617F7E5004B800B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F9589D282617F7E5004B800B /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
 		F9589D2F2617FCF6004B800B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		F9766934261A49AC00936D13 /* TextFieldListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldListView.swift; sourceTree = "<group>"; };
 		F9774A2F262A700D00602E54 /* SuggestionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTextView.swift; sourceTree = "<group>"; };
@@ -241,14 +241,14 @@
 		F9589D36261810A2004B800B /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				F91A9CA7261456D000893BEE /* ContentView.swift */,
+				F91A9CA7261456D000893BEE /* MainView.swift */,
 				F9589D2F2617FCF6004B800B /* TitleView.swift */,
 				F9FF80C22616838100190D34 /* GreetingMessageView.swift */,
 				F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */,
 				F9C37BA426163508008D7A3E /* EmotionButtonView.swift */,
 				F9FF80B2261681F600190D34 /* RadialMenuButtonView.swift */,
 				F9FF80D02616928E00190D34 /* NavBarView.swift */,
-				F9589D282617F7E5004B800B /* MainView.swift */,
+				F9589D282617F7E5004B800B /* MotherView.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 				F9C6A7972616EA2F001418A3 /* EditSuggestionsViewModel.swift */,
 				F98941B9262820A800A11384 /* SettingsViewModel.swift */,
 				F919AB8826227FF200ED9420 /* EmotionButtonViewModel.swift */,
-				F9098F9F26242449005314EC /* MainViewModel.swift */,
+				F9098F9F26242449005314EC /* MotherViewModel.swift */,
 				F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */,
 				F97B313D26292BF40055847C /* SuggestionViewModel.swift */,
 			);
@@ -302,7 +302,7 @@
 				F919AB8326227C8B00ED9420 /* EditSuggestions */,
 				F9589D36261810A2004B800B /* MainScreen */,
 				F9FF80D7261696C400190D34 /* LogView.swift */,
-				F9098FA526242AC3005314EC /* OpeningScreenView.swift */,
+				F9098FA526242AC3005314EC /* PrivacyPolicyView.swift */,
 				F9B60D38262819D5000CA2B8 /* SettingsView.swift */,
 			);
 			path = Views;
@@ -475,7 +475,7 @@
 				F9774A3B262A70C000602E54 /* NextSuggestionButtonView.swift in Sources */,
 				F97B3144262932B40055847C /* SuggestionAccessors.swift in Sources */,
 				F9FF80CA2616924B00190D34 /* EditSuggestionsView.swift in Sources */,
-				F9589D292617F7E5004B800B /* MainView.swift in Sources */,
+				F9589D292617F7E5004B800B /* MotherView.swift in Sources */,
 				F919AB8F2622B05700ED9420 /* SuggestionView.swift in Sources */,
 				F9C37BA526163508008D7A3E /* EmotionButtonView.swift in Sources */,
 				F9766935261A49AC00936D13 /* TextFieldListView.swift in Sources */,
@@ -483,7 +483,7 @@
 				F9FF80B3261681F600190D34 /* RadialMenuButtonView.swift in Sources */,
 				F9C6A7922616E65A001418A3 /* ContentViewModel.swift in Sources */,
 				F9C37B9E261633B0008D7A3E /* RadialMenuView.swift in Sources */,
-				F91A9CD1261456D200893BEE /* ContentView.swift in Sources */,
+				F91A9CD1261456D200893BEE /* MainView.swift in Sources */,
 				F91A9CCF261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
 				F945E5152625730B00ED49EB /* OpeningScreenViewModel.swift in Sources */,
 				F919AB8926227FF200ED9420 /* EmotionButtonViewModel.swift in Sources */,
@@ -491,12 +491,12 @@
 				F9C6A7982616EA2F001418A3 /* EditSuggestionsViewModel.swift in Sources */,
 				F99F4C33261D9B8800D282B5 /* TextFieldView.swift in Sources */,
 				F9FF80D8261696C400190D34 /* LogView.swift in Sources */,
-				F9098FA626242AC3005314EC /* OpeningScreenView.swift in Sources */,
+				F9098FA626242AC3005314EC /* PrivacyPolicyView.swift in Sources */,
 				F9589D302617FCF6004B800B /* TitleView.swift in Sources */,
 				F98941BA262820A800A11384 /* SettingsViewModel.swift in Sources */,
 				F97B31552629341C0055847C /* Suggestions.swift in Sources */,
 				F9FF80C32616838100190D34 /* GreetingMessageView.swift in Sources */,
-				F9098FA026242449005314EC /* MainViewModel.swift in Sources */,
+				F9098FA026242449005314EC /* MotherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,11 +510,11 @@
 				F9C37BA626163508008D7A3E /* EmotionButtonView.swift in Sources */,
 				F99F4C34261D9B8800D282B5 /* TextFieldView.swift in Sources */,
 				F9FF80D22616928E00190D34 /* NavBarView.swift in Sources */,
-				F9589D2A2617F7E5004B800B /* MainView.swift in Sources */,
+				F9589D2A2617F7E5004B800B /* MotherView.swift in Sources */,
 				F9FF80B4261681F600190D34 /* RadialMenuButtonView.swift in Sources */,
 				F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */,
 				F919AB902622B05700ED9420 /* SuggestionView.swift in Sources */,
-				F91A9CD2261456D200893BEE /* ContentView.swift in Sources */,
+				F91A9CD2261456D200893BEE /* MainView.swift in Sources */,
 				F9774A31262A700D00602E54 /* SuggestionTextView.swift in Sources */,
 				F91A9CD0261456D200893BEE /* SimpleMindfulnessApp.swift in Sources */,
 				F9774A3C262A70C000602E54 /* NextSuggestionButtonView.swift in Sources */,

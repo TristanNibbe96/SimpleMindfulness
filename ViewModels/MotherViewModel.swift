@@ -14,7 +14,7 @@ enum screenType: Int {
      case suggestion = 3
 }
 
-class MotherViewModel: SuggestionAccessors{
+class MotherViewModel: ObservableObject{
     @Published var acceptedPrivacyPolicy: Bool = false
     @Published var currentScreen: screenType = screenType.privacyPolicy
     
@@ -22,10 +22,6 @@ class MotherViewModel: SuggestionAccessors{
         currentScreen = screen
     }
     
-    override init(){
-        super.init()
-        acceptedPrivacyPolicy = getAcceptedPrivacyPolicy()
-    }
     
     func getAcceptedPrivacyPolicy() -> Bool{
         var seen = false

@@ -9,16 +9,13 @@ import SwiftUI
 
 struct MotherView: View {
     @EnvironmentObject var viewModel : MotherViewModel
-    @State var navBarVisible = false
-    @State var suggestionScreenVisible = false
     @State var selectedEmotion = emotionType.angry
     
     
     var body: some View {
-        
         switch viewModel.currentScreen {
             case .privacyPolicy:
-                PrivacyPolicyView()
+                PrivacyPolicyView(motherView: self)
             case .navbar:
                 NavBarView()
             case .suggestion:
@@ -26,6 +23,7 @@ struct MotherView: View {
             case .main:
                 MainView()
         }
+        
     }
 }
 

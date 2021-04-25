@@ -10,15 +10,14 @@ import SwiftUI
 struct SuggestionView: View {
     @State var currentSuggestionIndex = 0
     @State var currentSuggestion: String = ""
+    @EnvironmentObject var motherViewModel : MotherViewModel
     let viewModel = SuggestionViewModel()
     let suggestions: [String]
     var suggestionType: emotionType = emotionType.angry
-    var motherView: MotherView
     var backgroundColor: Color
 
-    init(motherView: MotherView, suggestionType: emotionType = emotionType.angry){
+    init(suggestionType: emotionType = emotionType.angry){
         self.suggestions = viewModel.getSuggestionList(emotion: suggestionType)
-        self.motherView = motherView
         backgroundColor = .blue
     }
     
@@ -31,7 +30,7 @@ struct SuggestionView: View {
     }
     
     func toggleSuggestionScreen(){
-        //suggestionScreenVisible.wrappedValue.toggle()
+        motherViewModel.setCurrentScreen(screen: .main)
     }
     
     var scaledWidth: CGFloat{
@@ -72,6 +71,12 @@ struct SuggestionView: View {
         .onAppear(){
             currentSuggestion = suggestions[currentSuggestionIndex]
         }
+    }
+}
+
+struct SuggestionView_Previews: PreviewProvider {
+    static var previews: some View {
+        SuggestionView()
     }
 }
 

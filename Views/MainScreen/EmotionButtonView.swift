@@ -9,20 +9,26 @@ import SwiftUI
 
 struct EmotionButtonView: View {
     @ObservedObject var viewModel = EmotionButtonViewModel()
-    @State var emotion = emotionType.angry
-    @State var emotionText = "Happy"
-    @State var imageName = "Face_Happy"
+    @EnvironmentObject var motherViewModel: MotherViewModel
+    @State var emotion : emotionType = .angry
+    var emotionText = "Angry"
+    var imageName : String = "Face_Angry"
     var radialMenu: RadialMenuButtonView
     
-    func logEmotion(){
-        viewModel.logEmotion(emotion: emotion)
-        radialMenu.closeRadialMenuAndOpenSuggestion(openSuggestion: true)
-    }
-        
-    func setImageAndText(){
+    init(emotion: emotionType, radialMenu: RadialMenuButtonView){
+        self.radialMenu = radialMenu
+        self.emotion = emotion
         emotionText = viewModel.buttonText(emotion: emotion)
         imageName = viewModel.imageText(emotion: emotion)
     }
+    
+    
+    func logEmotion(){
+        viewModel.logEmotion(emotion: emotion)
+        motherViewModel.setCurrentEmotion(emotion: emotion)
+        radialMenu.closeRadialMenuAndOpenSuggestion(openSuggestion: true)
+    }
+        
     
     var body: some View {
         Button(action: {self.logEmotion()}
@@ -39,15 +45,12 @@ struct EmotionButtonView: View {
         )//End Button
         .background(Color.white)
         .cornerRadius(20)
-        .onAppear(){
-            setImageAndText()
-        }
     }
 
 }
 
 struct EmotionButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        EmotionButtonView(radialMenu: RadialMenuButtonView())
+        EmotionButtonView(emotion: .angry, radialMenu: RadialMenuButtonView()).environmentObject(MotherViewModel())
     }
 }

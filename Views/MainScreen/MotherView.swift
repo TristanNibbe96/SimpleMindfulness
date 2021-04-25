@@ -15,11 +15,11 @@ struct MotherView: View {
     var body: some View {
         switch viewModel.currentScreen {
             case .privacyPolicy:
-                PrivacyPolicyView(motherView: self)
+                PrivacyPolicyView()
             case .navbar:
                 NavBarView()
             case .suggestion:
-                SuggestionView(motherView: self)
+                SuggestionView()
             case .main:
                 MainView()
         }

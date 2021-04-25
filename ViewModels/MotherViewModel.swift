@@ -17,6 +17,11 @@ enum screenType: Int {
 class MotherViewModel: ObservableObject{
     @Published var acceptedPrivacyPolicy: Bool = false
     @Published var currentScreen: screenType = screenType.privacyPolicy
+    @Published var currentEmotion: emotionType = .angry
+    
+    func setCurrentEmotion(emotion: emotionType){
+        currentEmotion = emotion;
+    }
     
     func setCurrentScreen(screen: screenType){
         currentScreen = screen

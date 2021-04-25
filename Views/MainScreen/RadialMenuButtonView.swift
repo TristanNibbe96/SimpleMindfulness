@@ -10,21 +10,16 @@ import SwiftUI
 struct RadialMenuButtonView: View {
     @State var radialMenuOpen = false
     @EnvironmentObject var motherViewModel: MotherViewModel
+
     
-    func openRadialMenu(){
-        radialMenuOpen = true
+    func toggleRadialMenu(){
+        radialMenuOpen.toggle()
     }
-    
-    func closeRadialMenuAndOpenSuggestion(openSuggestion: Bool){
-        radialMenuOpen = false
-        if(openSuggestion){
-            motherViewModel.setCurrentScreen(screen: screenType.suggestion)
-        }
-    }
+
     
     var body: some View {
         ZStack{
-            Button(action: {self.openRadialMenu()}
+            Button(action: {self.toggleRadialMenu()}
                 ,label: {
                 ZStack{
                     Text("I am feeling...")

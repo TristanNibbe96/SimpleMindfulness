@@ -8,25 +8,24 @@
 import SwiftUI
 
 struct SuggestionView: View {
-    @State var currentSuggestionIndex = 0
-    @State var currentSuggestion: String = ""
-    @EnvironmentObject var motherViewModel : MotherViewModel
+    @EnvironmentObject var motherViewModel: MotherViewModel
+    @State var I = 0
     let viewModel = SuggestionViewModel()
-    let suggestions: [String]
+    var suggestions: [String] = [""]
     var suggestionType: emotionType = emotionType.angry
-    var backgroundColor: Color
+    var backgroundColor: Color = .blue
 
-    init(suggestionType: emotionType = emotionType.angry){
+    init(suggestionType: emotionType){
+        self.suggestionType = suggestionType
         self.suggestions = viewModel.getSuggestionList(emotion: suggestionType)
         backgroundColor = .blue
     }
     
     func iterateSuggestionIndex(){
-        currentSuggestionIndex += 1
-        if(currentSuggestionIndex >= suggestions.count){
-            currentSuggestionIndex = 0
+        I += 1
+        if(I >= suggestions.count){
+            I = 0
         }
-        currentSuggestion = suggestions[currentSuggestionIndex]
     }
     
     func toggleSuggestionScreen(){
@@ -60,7 +59,7 @@ struct SuggestionView: View {
                     .padding(.trailing)
                 }//HStack
                 Spacer()
-                SuggestionTextView(backgroundColor: backgroundColor, suggestion:currentSuggestion)
+                SuggestionTextView(backgroundColor: backgroundColor, suggestion:suggestions[I])
                 Spacer()
                 Spacer()
                 NextSuggestionButtonView(item: iterateSuggestionIndex)
@@ -68,15 +67,12 @@ struct SuggestionView: View {
             }//VStack
             .frame(width: scaledWidth, height: scaledHeight)
         }//ZStack
-        .onAppear(){
-            currentSuggestion = suggestions[currentSuggestionIndex]
-        }
     }
 }
 
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
-        SuggestionView()
+        SuggestionView(suggestionType: .angry).environmentObject(MotherViewModel())
     }
 }
 

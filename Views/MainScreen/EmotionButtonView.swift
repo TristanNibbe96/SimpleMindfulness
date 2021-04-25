@@ -10,7 +10,7 @@ import SwiftUI
 struct EmotionButtonView: View {
     @ObservedObject var viewModel = EmotionButtonViewModel()
     @EnvironmentObject var motherViewModel: MotherViewModel
-    @State var emotion : emotionType = .angry
+    var emotion : emotionType = .angry
     var emotionText = "Angry"
     var imageName : String = "Face_Angry"
     var radialMenu: RadialMenuButtonView
@@ -26,7 +26,7 @@ struct EmotionButtonView: View {
     func logEmotion(){
         viewModel.logEmotion(emotion: emotion)
         motherViewModel.setCurrentEmotion(emotion: emotion)
-        radialMenu.closeRadialMenuAndOpenSuggestion(openSuggestion: true)
+        radialMenu.toggleRadialMenu()
     }
         
     

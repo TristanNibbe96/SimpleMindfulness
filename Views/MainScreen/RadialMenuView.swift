@@ -14,9 +14,6 @@ struct RadialMenuView: View {
         return UIScreen.main.bounds.width * 0.25;
     }
     
-    func closeRadialMenu(){
-        radialMenuButton.closeRadialMenuAndOpenSuggestion(openSuggestion: false)
-    }
         
     var body: some View {
         VStack{
@@ -26,7 +23,7 @@ struct RadialMenuView: View {
                 EmotionButtonView(emotion: emotionType.bleh, radialMenu: radialMenuButton)
                     .frame(width: scaledWidth, height: scaledWidth)
                 Spacer()
-                Button(action: closeRadialMenu
+                Button(action: radialMenuButton.toggleRadialMenu
                 ,label: {
                     Image(systemName: "xmark")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)

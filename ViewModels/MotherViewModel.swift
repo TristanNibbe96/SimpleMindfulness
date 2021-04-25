@@ -19,8 +19,15 @@ class MotherViewModel: ObservableObject{
     @Published var currentScreen: screenType = screenType.privacyPolicy
     @Published var currentEmotion: emotionType = .angry
     
+    init(){
+        if(getAcceptedPrivacyPolicy()){
+            setCurrentScreen(screen: .main)
+        }
+    }
+    
     func setCurrentEmotion(emotion: emotionType){
         currentEmotion = emotion;
+        setCurrentScreen(screen: .suggestion)
     }
     
     func setCurrentScreen(screen: screenType){

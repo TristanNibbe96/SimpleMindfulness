@@ -9,8 +9,6 @@ import SwiftUI
 
 struct MotherView: View {
     @EnvironmentObject var viewModel : MotherViewModel
-    @State var selectedEmotion = emotionType.angry
-    
     
     var body: some View {
         switch viewModel.currentScreen {
@@ -19,7 +17,7 @@ struct MotherView: View {
             case .navbar:
                 NavBarView()
             case .suggestion:
-                SuggestionView()
+                SuggestionView(suggestionType: viewModel.currentEmotion)
             case .main:
                 MainView()
         }

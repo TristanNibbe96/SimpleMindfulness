@@ -256,9 +256,9 @@
 		F9774A2E262A6FE400602E54 /* SuggestionView */ = {
 			isa = PBXGroup;
 			children = (
-				F919AB8E2622B05700ED9420 /* SuggestionView.swift */,
 				F9774A2F262A700D00602E54 /* SuggestionTextView.swift */,
 				F9774A3A262A70C000602E54 /* NextSuggestionButtonView.swift */,
+				F919AB8E2622B05700ED9420 /* SuggestionView.swift */,
 			);
 			path = SuggestionView;
 			sourceTree = "<group>";

@@ -32,19 +32,14 @@ struct SuggestionView: View {
         motherViewModel.setCurrentScreen(screen: .main)
     }
     
-    var scaledWidth: CGFloat{
-        return UIScreen.main.bounds.width;
-    }
-    
-    var scaledHeight: CGFloat{
-        return UIScreen.main.bounds.height;
-    }
     
     var body: some View {
         ZStack{
             Image("Rainbow")
+                .resizable()
                 .colorMultiply(backgroundColor)
                 .saturation(2.0)
+                .ignoresSafeArea()
 
             VStack{
                 HStack{
@@ -65,7 +60,6 @@ struct SuggestionView: View {
                 NextSuggestionButtonView(item: iterateSuggestionIndex)
                 Spacer()
             }//VStack
-            .frame(width: scaledWidth, height: scaledHeight)
         }//ZStack
     }
 }

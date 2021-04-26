@@ -48,6 +48,8 @@
 		F9966CCF2619A40200F0642B /* Suggestions.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9966CCD2619A40200F0642B /* Suggestions.plist */; };
 		F99F4C33261D9B8800D282B5 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F4C32261D9B8800D282B5 /* TextFieldView.swift */; };
 		F99F4C34261D9B8800D282B5 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F4C32261D9B8800D282B5 /* TextFieldView.swift */; };
+		F9A48ADB2636AFF500A2F02F /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A48ADA2636AFF500A2F02F /* LogViewModel.swift */; };
+		F9A48AE22636B08E00A2F02F /* LogEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A48AE12636B08E00A2F02F /* LogEntryView.swift */; };
 		F9B60D39262819D5000CA2B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B60D38262819D5000CA2B8 /* SettingsView.swift */; };
 		F9C37B9E261633B0008D7A3E /* RadialMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */; };
 		F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */; };
@@ -120,6 +122,8 @@
 		F98941B9262820A800A11384 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		F9966CCD2619A40200F0642B /* Suggestions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Suggestions.plist; sourceTree = "<group>"; };
 		F99F4C32261D9B8800D282B5 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		F9A48ADA2636AFF500A2F02F /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
+		F9A48AE12636B08E00A2F02F /* LogEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryView.swift; sourceTree = "<group>"; };
 		F9B60D38262819D5000CA2B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F9C37B9D261633B0008D7A3E /* RadialMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialMenuView.swift; sourceTree = "<group>"; };
 		F9C37BA426163508008D7A3E /* EmotionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButtonView.swift; sourceTree = "<group>"; };
@@ -291,6 +295,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F9A48AE02636B07900A2F02F /* LogView */ = {
+			isa = PBXGroup;
+			children = (
+				F9FF80D7261696C400190D34 /* LogView.swift */,
+				F9A48AE12636B08E00A2F02F /* LogEntryView.swift */,
+			);
+			path = LogView;
+			sourceTree = "<group>";
+		};
 		F9C6A7902616E631001418A3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +315,7 @@
 				F9098F9F26242449005314EC /* MotherViewModel.swift */,
 				F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */,
 				F97B313D26292BF40055847C /* SuggestionViewModel.swift */,
+				F9A48ADA2636AFF500A2F02F /* LogViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -309,10 +323,10 @@
 		F9FF80B92616820600190D34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F9A48AE02636B07900A2F02F /* LogView */,
 				F9774A2E262A6FE400602E54 /* SuggestionView */,
 				F919AB8326227C8B00ED9420 /* EditSuggestions */,
 				F9589D36261810A2004B800B /* MainScreen */,
-				F9FF80D7261696C400190D34 /* LogView.swift */,
 				F9098FA526242AC3005314EC /* PrivacyPolicyView.swift */,
 				F9B60D38262819D5000CA2B8 /* SettingsView.swift */,
 			);
@@ -505,8 +519,10 @@
 				F9FF80D8261696C400190D34 /* LogView.swift in Sources */,
 				F9098FA626242AC3005314EC /* PrivacyPolicyView.swift in Sources */,
 				F9649A3E2636A98A00E7DA09 /* LogAccessors.swift in Sources */,
+				F9A48AE22636B08E00A2F02F /* LogEntryView.swift in Sources */,
 				F9589D302617FCF6004B800B /* TitleView.swift in Sources */,
 				F98941BA262820A800A11384 /* SettingsViewModel.swift in Sources */,
+				F9A48ADB2636AFF500A2F02F /* LogViewModel.swift in Sources */,
 				F97B31552629341C0055847C /* Suggestions.swift in Sources */,
 				F9FF80C32616838100190D34 /* GreetingMessageView.swift in Sources */,
 				F9649A282636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld in Sources */,

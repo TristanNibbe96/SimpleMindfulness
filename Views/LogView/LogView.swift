@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct LogView: View {
+    @ObservedObject var viewModel = LogViewModel()
+    
+    let log = LogViewModel().loadLoggedEmotions()
+    
     var body: some View {
         VStack{
-            Spacer()
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            Spacer()
-        }.background(Color.red)
+            ForEach(log, id: \.self ){ logEntry in
+                LogEntryView(emotion: viewModel.emotionText(emotionRaw: logEntry.emotionType))
+            }
+        }
     }
 }
 

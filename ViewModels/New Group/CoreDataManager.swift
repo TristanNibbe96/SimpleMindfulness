@@ -16,7 +16,7 @@ class CoreDataManager{
     }
     
     private lazy var persistantContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "LoggedEmotions")
+        let container = NSPersistentContainer(name: "SimpleMindfulness")
         container.loadPersistentStores(completionHandler: { _, error in
             _ = error.map {fatalError("Unresolved error \($0)")}
         })

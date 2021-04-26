@@ -42,7 +42,17 @@ class EmotionButtonViewModel: ObservableObject{
         return imageText
     }
     
-    func logEmotion(emotion: emotionType){
-        
+    func logEmotion(emotion: emotionType) {
+        let context = CoreDataManager.shared.backgroundContext()
+        context.perform {
+            let entity = LoggedEmotion.entity()
+            let loggedEmotion = LoggedEmotion(entity: entity, insertInto: context)
+            loggedEmotion.emotionType = Int16(emotion.rawValue)
+            do{
+                try context.save()
+            } catch{
+                print(error)
+            }
+        }
     }
 }

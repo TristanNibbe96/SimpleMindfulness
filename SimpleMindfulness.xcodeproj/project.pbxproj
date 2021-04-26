@@ -28,6 +28,11 @@
 		F9589D2A2617F7E5004B800B /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MotherView.swift */; };
 		F9589D302617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
 		F9589D312617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
+		F9649A282636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9649A262636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld */; };
+		F9649A292636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9649A262636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld */; };
+		F9649A2F2636A6BE00E7DA09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9649A2E2636A6BE00E7DA09 /* CoreDataManager.swift */; };
+		F9649A3E2636A98A00E7DA09 /* LogAccessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9649A3D2636A98A00E7DA09 /* LogAccessors.swift */; };
+		F9649A3F2636A98A00E7DA09 /* LogAccessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9649A3D2636A98A00E7DA09 /* LogAccessors.swift */; };
 		F9766935261A49AC00936D13 /* TextFieldListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9766934261A49AC00936D13 /* TextFieldListView.swift */; };
 		F9766936261A49AC00936D13 /* TextFieldListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9766934261A49AC00936D13 /* TextFieldListView.swift */; };
 		F9774A30262A700D00602E54 /* SuggestionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9774A2F262A700D00602E54 /* SuggestionTextView.swift */; };
@@ -102,6 +107,9 @@
 		F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningScreenViewModel.swift; sourceTree = "<group>"; };
 		F9589D282617F7E5004B800B /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
 		F9589D2F2617FCF6004B800B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		F9649A272636A59C00E7DA09 /* LoggedEmotion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoggedEmotion.xcdatamodel; sourceTree = "<group>"; };
+		F9649A2E2636A6BE00E7DA09 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F9649A3D2636A98A00E7DA09 /* LogAccessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAccessors.swift; sourceTree = "<group>"; };
 		F9766934261A49AC00936D13 /* TextFieldListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldListView.swift; sourceTree = "<group>"; };
 		F9774A2F262A700D00602E54 /* SuggestionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTextView.swift; sourceTree = "<group>"; };
 		F9774A3A262A70C000602E54 /* NextSuggestionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextSuggestionButtonView.swift; sourceTree = "<group>"; };
@@ -186,6 +194,7 @@
 			children = (
 				F91A9CA6261456D000893BEE /* SimpleMindfulnessApp.swift */,
 				F91A9CA8261456D200893BEE /* Assets.xcassets */,
+				F9649A262636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld */,
 				F9966CCD2619A40200F0642B /* Suggestions.plist */,
 				F945E50D262572C800ED49EB /* PrivacyPolicy.txt */,
 			);
@@ -266,8 +275,10 @@
 		F97B3149262932FC0055847C /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				F9649A2E2636A6BE00E7DA09 /* CoreDataManager.swift */,
 				F97B3143262932B40055847C /* SuggestionAccessors.swift */,
 				F97B314A2629332F0055847C /* SettingsAccessors.swift */,
+				F9649A3D2636A98A00E7DA09 /* LogAccessors.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -490,12 +501,15 @@
 				F9774A30262A700D00602E54 /* SuggestionTextView.swift in Sources */,
 				F9C6A7982616EA2F001418A3 /* EditSuggestionsViewModel.swift in Sources */,
 				F99F4C33261D9B8800D282B5 /* TextFieldView.swift in Sources */,
+				F9649A2F2636A6BE00E7DA09 /* CoreDataManager.swift in Sources */,
 				F9FF80D8261696C400190D34 /* LogView.swift in Sources */,
 				F9098FA626242AC3005314EC /* PrivacyPolicyView.swift in Sources */,
+				F9649A3E2636A98A00E7DA09 /* LogAccessors.swift in Sources */,
 				F9589D302617FCF6004B800B /* TitleView.swift in Sources */,
 				F98941BA262820A800A11384 /* SettingsViewModel.swift in Sources */,
 				F97B31552629341C0055847C /* Suggestions.swift in Sources */,
 				F9FF80C32616838100190D34 /* GreetingMessageView.swift in Sources */,
+				F9649A282636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld in Sources */,
 				F9098FA026242449005314EC /* MotherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9649A3F2636A98A00E7DA09 /* LogAccessors.swift in Sources */,
 				F9FF80CB2616924B00190D34 /* EditSuggestionsView.swift in Sources */,
 				F945E5162625730B00ED49EB /* OpeningScreenViewModel.swift in Sources */,
 				F9766936261A49AC00936D13 /* TextFieldListView.swift in Sources */,
@@ -513,6 +528,7 @@
 				F9589D2A2617F7E5004B800B /* MotherView.swift in Sources */,
 				F9FF80B4261681F600190D34 /* RadialMenuButtonView.swift in Sources */,
 				F9C37B9F261633B0008D7A3E /* RadialMenuView.swift in Sources */,
+				F9649A292636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld in Sources */,
 				F919AB902622B05700ED9420 /* SuggestionView.swift in Sources */,
 				F91A9CD2261456D200893BEE /* MainView.swift in Sources */,
 				F9774A31262A700D00602E54 /* SuggestionTextView.swift in Sources */,
@@ -890,6 +906,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F9649A262636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F9649A272636A59C00E7DA09 /* LoggedEmotion.xcdatamodel */,
+			);
+			currentVersion = F9649A272636A59C00E7DA09 /* LoggedEmotion.xcdatamodel */;
+			path = SimpleMindfulness.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F91A9CA1261456D000893BEE /* Project object */;
 }

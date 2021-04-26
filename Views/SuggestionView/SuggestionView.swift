@@ -14,11 +14,13 @@ struct SuggestionView: View {
     var suggestions: [String] = [""]
     var suggestionType: emotionType = emotionType.angry
     var backgroundColor: Color = .blue
+    var saturation: Double = 1.0
 
     init(suggestionType: emotionType){
         self.suggestionType = suggestionType
         self.suggestions = viewModel.getSuggestionList(emotion: suggestionType)
-        backgroundColor = .blue
+        backgroundColor = viewModel.getBackgroundColor(suggestionType: suggestionType)
+        saturation = viewModel.getSaturationLevel(suggestionType: suggestionType)
     }
     
     func iterateSuggestionIndex(){
@@ -32,13 +34,12 @@ struct SuggestionView: View {
         motherViewModel.setCurrentScreen(screen: .main)
     }
     
-    
     var body: some View {
         ZStack{
-            Image("Rainbow")
+            Image("Rainbow2")
                 .resizable()
                 .colorMultiply(backgroundColor)
-                .saturation(2.0)
+                .saturation(saturation)
                 .ignoresSafeArea()
 
             VStack{

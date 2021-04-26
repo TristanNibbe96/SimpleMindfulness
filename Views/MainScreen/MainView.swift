@@ -14,21 +14,13 @@ struct MainView: View {
         motherViewModel.setCurrentScreen(screen: screenType.navbar)
     }
     
-    var scaledWidth: CGFloat{
-        return UIScreen.main.bounds.width;
-    }
-    
-    var scaledHeight: CGFloat{
-        return UIScreen.main.bounds.height;
-    }
     
     var body: some View {
         ZStack {
-            Image("Rainbow")
+            Image("Rainbow2")
                 .resizable()
                 .ignoresSafeArea()
                 VStack(){
-                    
                     VStack{
                         Divider()
                         TitleView()
@@ -40,7 +32,6 @@ struct MainView: View {
                     RadialMenuButtonView()
                     Spacer()
                 }//VStack end
-                .frame(width: scaledWidth, height: scaledHeight)
         }//ZStack end
     }
 }

@@ -8,15 +8,38 @@
 import SwiftUI
 
 struct LogEntryView: View {
-    let emotion: String
+    let entry: LoggedEmotion
+    let viewModel: LogEntryViewModel = LogEntryViewModel()
+    let emotionText: String
+    let dateTime: Date
+    let dateString: String
+    
+    init(entry: LoggedEmotion) {
+        self.entry = entry
+        emotionText = viewModel.emotionText(emotionRaw: entry.emotionType)
+        dateTime = entry.dateTime ?? Date()
+        dateString = viewModel.getFormattedDateTime(date: dateTime)
+    }
     
     var body: some View {
-        Text(emotion)
+        HStack{
+            Text(emotionText)
+            Text(dateString)
+        }
     }
 }
 
 struct LogEntryView_Previews: PreviewProvider {
+    
+    static func test() -> LoggedEmotion{
+        let emotion = LoggedEmotion()
+        
+        emotion.dateTime = Date()
+        emotion.emotionType = 0
+        
+        return emotion
+    }
     static var previews: some View {
-        LogEntryView(emotion: "test")
+        LogEntryView(entry: test())
     }
 }

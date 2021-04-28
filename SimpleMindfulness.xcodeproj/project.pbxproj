@@ -28,6 +28,7 @@
 		F9589D2A2617F7E5004B800B /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D282617F7E5004B800B /* MotherView.swift */; };
 		F9589D302617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
 		F9589D312617FCF6004B800B /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9589D2F2617FCF6004B800B /* TitleView.swift */; };
+		F95E3A562638EF54009EDD56 /* LogEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E3A552638EF54009EDD56 /* LogEntryViewModel.swift */; };
 		F9649A282636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9649A262636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld */; };
 		F9649A292636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9649A262636A59C00E7DA09 /* SimpleMindfulness.xcdatamodeld */; };
 		F9649A2F2636A6BE00E7DA09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9649A2E2636A6BE00E7DA09 /* CoreDataManager.swift */; };
@@ -109,6 +110,7 @@
 		F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningScreenViewModel.swift; sourceTree = "<group>"; };
 		F9589D282617F7E5004B800B /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
 		F9589D2F2617FCF6004B800B /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		F95E3A552638EF54009EDD56 /* LogEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryViewModel.swift; sourceTree = "<group>"; };
 		F9649A272636A59C00E7DA09 /* LoggedEmotion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoggedEmotion.xcdatamodel; sourceTree = "<group>"; };
 		F9649A2E2636A6BE00E7DA09 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F9649A3D2636A98A00E7DA09 /* LogAccessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAccessors.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				F945E5142625730B00ED49EB /* OpeningScreenViewModel.swift */,
 				F97B313D26292BF40055847C /* SuggestionViewModel.swift */,
 				F9A48ADA2636AFF500A2F02F /* LogViewModel.swift */,
+				F95E3A552638EF54009EDD56 /* LogEntryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				F919AB8926227FF200ED9420 /* EmotionButtonViewModel.swift in Sources */,
 				F9774A30262A700D00602E54 /* SuggestionTextView.swift in Sources */,
 				F9C6A7982616EA2F001418A3 /* EditSuggestionsViewModel.swift in Sources */,
+				F95E3A562638EF54009EDD56 /* LogEntryViewModel.swift in Sources */,
 				F99F4C33261D9B8800D282B5 /* TextFieldView.swift in Sources */,
 				F9649A2F2636A6BE00E7DA09 /* CoreDataManager.swift in Sources */,
 				F9FF80D8261696C400190D34 /* LogView.swift in Sources */,

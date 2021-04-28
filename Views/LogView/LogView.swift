@@ -15,7 +15,7 @@ struct LogView: View {
     var body: some View {
         VStack{
             ForEach(log, id: \.self ){ logEntry in
-                LogEntryView(emotion: viewModel.emotionText(emotionRaw: logEntry.emotionType))
+                LogEntryView(entry: logEntry)
             }
         }
     }

@@ -44,10 +44,12 @@ class EmotionButtonViewModel: ObservableObject{
     
     func logEmotion(emotion: emotionType) {
         let context = CoreDataManager.shared.backgroundContext()
+        let dateTime = Date()
         context.perform {
             let entity = LoggedEmotion.entity()
             let loggedEmotion = LoggedEmotion(entity: entity, insertInto: context)
             loggedEmotion.emotionType = Int16(emotion.rawValue)
+            loggedEmotion.dateTime = dateTime
             do{
                 try context.save()
             } catch{
